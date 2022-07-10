@@ -38,31 +38,6 @@
   </entry>
   
   <entry>
-    <title>文章标题</title>
-    <link href="http://shajiu.com/2022/07/09/article-title/"/>
-    <id>http://shajiu.com/2022/07/09/article-title/</id>
-    <published>2022-07-09T14:19:06.000Z</published>
-    <updated>2022-07-10T09:44:52.065Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;您好呀！&lt;br&gt;&lt;img src=&quot;https://s3.bmp.ovh/imgs/2022/07/10/313255aa9d3155c2.jpg&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="科技" scheme="http://shajiu.com/categories/%E7%A7%91%E6%8A%80/"/>
-    
-    
-    <category term="文章标签" scheme="http://shajiu.com/tags/%E6%96%87%E7%AB%A0%E6%A0%87%E7%AD%BE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>利用Python绘制桑基图</title>
     <link href="http://shajiu.com/2022/03/19/li-yong-python-hui-zhi-sang-ji-tu/"/>
     <id>http://shajiu.com/2022/03/19/li-yong-python-hui-zhi-sang-ji-tu/</id>
@@ -157,6 +132,31 @@
     
     
     <category term="语言" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So Easy</title>
+    <link href="http://shajiu.com/2022/01/28/cang-yu-shou-xie-zi-mu-yu-pyqt-de-peng-zhuang-ji-yu-pytorch-kuang-jia-lenet-5-wang-luo-de-tu-xing-hua-cang-wen-shou-xie-zi-mu-shi-bie-xi-tong-so-easy/"/>
+    <id>http://shajiu.com/2022/01/28/cang-yu-shou-xie-zi-mu-yu-pyqt-de-peng-zhuang-ji-yu-pytorch-kuang-jia-lenet-5-wang-luo-de-tu-xing-hua-cang-wen-shou-xie-zi-mu-shi-bie-xi-tong-so-easy/</id>
+    <published>2022-01-28T12:54:28.000Z</published>
+    <updated>2022-07-10T10:04:54.587Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;&gt;&lt;a href=&quot;#藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="CV" scheme="http://shajiu.com/categories/CV/"/>
     
     
     <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
