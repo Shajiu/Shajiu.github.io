@@ -42,15 +42,14 @@
     <link href="http://shajiu.com/2022/07/09/article-title/"/>
     <id>http://shajiu.com/2022/07/09/article-title/</id>
     <published>2022-07-09T14:19:06.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-07-10T09:44:52.065Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;您好呀！&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;p&gt;您好呀！&lt;br&gt;&lt;img src=&quot;https://s3.bmp.ovh/imgs/2022/07/10/313255aa9d3155c2.jpg&quot;</summary>
         
       
     
@@ -158,31 +157,6 @@
     
     
     <category term="语言" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So Easy</title>
-    <link href="http://shajiu.com/2022/01/28/cang-yu-shou-xie-zi-mu-yu-pyqt-de-peng-zhuang-ji-yu-pytorch-kuang-jia-lenet-5-wang-luo-de-tu-xing-hua-cang-wen-shou-xie-zi-mu-shi-bie-xi-tong-so-easy/"/>
-    <id>http://shajiu.com/2022/01/28/cang-yu-shou-xie-zi-mu-yu-pyqt-de-peng-zhuang-ji-yu-pytorch-kuang-jia-lenet-5-wang-luo-de-tu-xing-hua-cang-wen-shou-xie-zi-mu-shi-bie-xi-tong-so-easy/</id>
-    <published>2022-01-28T12:54:28.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;&gt;&lt;a href=&quot;#藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="CV" scheme="http://shajiu.com/categories/CV/"/>
     
     
     <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
@@ -511,6 +485,32 @@
     
     
     <category term="算法" scheme="http://shajiu.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux命令大全</title>
+    <link href="http://shajiu.com/2021/12/08/linux-ming-ling-da-quan/"/>
+    <id>http://shajiu.com/2021/12/08/linux-ming-ling-da-quan/</id>
+    <published>2021-12-08T08:32:03.000Z</published>
+    <updated>2022-07-10T06:08:45.039Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;虽然每天都会接触Linux系统, 尤其是使用了Mac之后, 每天都是工作在黑色背景的命令行环境中. 自己记忆力不好, 很多有用的Linux命令不能很好的记忆, 现在逐渐总结一下, 以便后续查看.&lt;/p&gt;
+&lt;h5 id=&quot;Linux关机-重启&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="语言(Linux)" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80-Linux/"/>
     
     
     <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
