@@ -2,10 +2,13 @@
 <html lang="zh-CN">
 
 
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Java代码命名技巧, ECNU NLP DeepLearning AntNLP 沙九 甘南第一勇士 自然语言处理 机器学习 深度学习 机器翻译 藏语信息处理 源码上门取算法码上来">
-    <meta name="description" content="优雅整洁的 Java 代码命名技巧&amp;amp;emsp;&amp;amp;emsp;合格的程序员不仅仅是让代码跑起来，而是要做到代码整洁，只满足为了能让编译器通过编译，机器能跑就行而写代码的程序会算不上开发者，码农都不算。好的命名能体现出代码的特征，">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="优雅整洁的 Java 代码命名技巧&amp;emsp;&amp;emsp;合格的程序员不仅仅是让代码跑起来，而是要做到代码整洁，只满足为了能让编译器通过编译，机器能跑就行而写代码的程序会算不上开发者，码农都不算。好的命名能体现出代码的特征，含义或者是用途，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,32 +16,61 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    
-
     <title>Java代码命名技巧 | 沙九的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce84511d3df71640a9378a69f6293044";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
-<meta name="generator" content="Hexo 6.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="沙九的博客" type="application/atom+xml">
-</head>
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
 
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -52,93 +84,78 @@
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
     
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
     
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
     
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
 </ul>
-
 
 <div id="mobile-nav" class="side-nav sidenav">
 
@@ -154,96 +171,83 @@
         </div>
     </div>
 
+    
+
     <ul class="menu-list mobile-menu-list">
         
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                留言板
+            </a>
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/Shajiu/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
     </ul>
 </div>
-
 
         </div>
 
@@ -293,7 +297,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Shajiu/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -309,21 +313,35 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java代码命名技巧</h1>
+                    <div class="description center-align post-title">
+                        Java代码命名技巧
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 
 
@@ -355,12 +373,12 @@
     }
 
     .toc-widget {
-        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        padding: 35px 0 15px 17px;
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -369,11 +387,6 @@
     .toc-widget ol {
         padding: 0;
         list-style: none;
-    }
-
-    #toc-content {
-        padding-bottom: 30px;
-        overflow: auto;
     }
 
     #toc-content ol {
@@ -393,19 +406,19 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
     }
 
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
     #floating-toc-btn {
         position: fixed;
-        right: 15px;
+        right: 20px;
         bottom: 76px;
         padding-top: 15px;
         margin-bottom: 0;
@@ -433,9 +446,9 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%B8%93%E4%B8%9A/">
-                                <span class="chip bg-color">专业</span>
-                            </a>
+                        <a href="/tags/专业/" target="_blank">
+                            <span class="chip bg-color">专业</span>
+                        </a>
                         
                     </div>
                     
@@ -443,11 +456,11 @@
                 <div class="col s5 right-align">
                     
                     <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%AD%E8%A8%80/" class="post-category">
-                                语言
-                            </a>
+                        <a href="/categories/语言/" class="post-category" target="_blank">
+                            语言
+                        </a>
                         
                     </div>
                     
@@ -455,71 +468,83 @@
             </div>
 
             <div class="post-info">
-                
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2022-02-17
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    沙九
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.7k
                 </div>
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
                 
 
                 
-
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
                 
             </div>
         </div>
         <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
-
-        
-
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="优雅整洁的-Java-代码命名技巧"><a href="#优雅整洁的-Java-代码命名技巧" class="headerlink" title="优雅整洁的 Java 代码命名技巧"></a>优雅整洁的 Java 代码命名技巧</h3><p>&amp;emsp;&amp;emsp;合格的程序员不仅仅是让代码跑起来，而是要做到代码整洁，只满足为了能让编译器通过编译，机器能跑就行而写代码的程序会算不上开发者，码农都不算。好的命名能体现出代码的特征，含义或者是用途，让阅读者可以根据名称的含义快速理清程序的脉络。本篇分享如下代码命名套路来提高我们代码命名：</p>
+                <h3 id="优雅整洁的-Java-代码命名技巧"><a href="#优雅整洁的-Java-代码命名技巧" class="headerlink" title="优雅整洁的 Java 代码命名技巧"></a>优雅整洁的 Java 代码命名技巧</h3><p>&emsp;&emsp;合格的程序员不仅仅是让代码跑起来，而是要做到代码整洁，只满足为了能让编译器通过编译，机器能跑就行而写代码的程序会算不上开发者，码农都不算。好的命名能体现出代码的特征，含义或者是用途，让阅读者可以根据名称的含义快速理清程序的脉络。本篇分享如下代码命名套路来提高我们代码命名：</p>
 <blockquote>
 <p>勿模糊，准确达意<br>避免误导<br>做有意义的区分<br>结合上下文简化名称<br>使用可搜索、易读的名称<br>包命名规范<br>类名与方法名规范</p>
 </blockquote>
-<h5 id="一、混乱的代价"><a href="#一、混乱的代价" class="headerlink" title="一、混乱的代价"></a>一、混乱的代价</h5><p>&amp;emsp; &amp;emsp;我相信每个程序员都被某些人的垃圾代码恶心过，导致开发进度被严重延缓、性能差劲、bug 多。每次新增和修改代码如履薄冰，我们只有对那堆腐朽的代码了然于胸才敢修改。<br>&amp;emsp;&amp;emsp;随着时间推移，团队生产力下降，所有人都抵触这个项目，对其束手无策。新手不熟悉原来的场景和设计，不知道如何修改才符合实际意图，导致更容易出现混乱。最后，开发团队产生了抵触心理并造反了，再也无法忍受在这个垃圾代码基础上做开发，而管理层不愿意投入资源重新设计。<br><strong>一个优秀的开发者应该时刻保持代码整洁，无关 deadline。</strong></p>
+<h5 id="一、混乱的代价"><a href="#一、混乱的代价" class="headerlink" title="一、混乱的代价"></a>一、混乱的代价</h5><p>&emsp; &emsp;我相信每个程序员都被某些人的垃圾代码恶心过，导致开发进度被严重延缓、性能差劲、bug 多。每次新增和修改代码如履薄冰，我们只有对那堆腐朽的代码了然于胸才敢修改。<br>&emsp;&emsp;随着时间推移，团队生产力下降，所有人都抵触这个项目，对其束手无策。新手不熟悉原来的场景和设计，不知道如何修改才符合实际意图，导致更容易出现混乱。最后，开发团队产生了抵触心理并造反了，再也无法忍受在这个垃圾代码基础上做开发，而管理层不愿意投入资源重新设计。<br><strong>一个优秀的开发者应该时刻保持代码整洁，无关 deadline。</strong></p>
 <blockquote>
 <p>为什么会写出垃圾代码呢？</p>
 </blockquote>
-<p>&amp;emsp;&amp;emsp;有的人可能会说，需求变化违背了最初的设计、排期太紧没法干好…… 其实，这是一种不专业的托词。推进进度是产品经理他们该干的，虽然痴迷于进度，但是多数产品经理也会期望有良好的可拓展代码以便应对市场变换莫测的需求。<strong>连海誓山盟的爱情都会变，又如何做到需求不会改变呢？</strong> 所以我们比他们更加重视代码质量，才能应对变化的需求。<strong>保护代码持续整洁优雅是每个优秀开发者都应该遵守的原则。</strong> 混乱的代码只会拖慢未来的开发进度，唯一加快进度的方法：<strong>始终尽可能保持代码优雅整洁。</strong> 好比医生在做手术之前要先消毒，你说消毒太耗时间了，直接拿刀子整吧。<strong>作为专业的医生你会照做么？作为专业的程序员，我们要了解代码变坏的风险并坚持保持代码质量。</strong></p>
-<h5 id="二、什么是整洁代码"><a href="#二、什么是整洁代码" class="headerlink" title="二、什么是整洁代码"></a>二、什么是整洁代码</h5><p>&amp;emsp;&amp;emsp;代码质量评判需要综合各种因素得到的，我们并不能从单一的维度去评判。比如代码可读性好，但是空间与时间复杂度高，这并不能算得上是好代码。好的代码应该具备：<strong>易拓展和维护、简洁（只做好一件事）、可复用性强（没有重复代码）、能快速写出单元测试。可读性强、没有副作用（做了名称以外的工作）。</strong></p>
+<p>&emsp;&emsp;有的人可能会说，需求变化违背了最初的设计、排期太紧没法干好…… 其实，这是一种不专业的托词。推进进度是产品经理他们该干的，虽然痴迷于进度，但是多数产品经理也会期望有良好的可拓展代码以便应对市场变换莫测的需求。<strong>连海誓山盟的爱情都会变，又如何做到需求不会改变呢？</strong> 所以我们比他们更加重视代码质量，才能应对变化的需求。<strong>保护代码持续整洁优雅是每个优秀开发者都应该遵守的原则。</strong> 混乱的代码只会拖慢未来的开发进度，唯一加快进度的方法：<strong>始终尽可能保持代码优雅整洁。</strong> 好比医生在做手术之前要先消毒，你说消毒太耗时间了，直接拿刀子整吧。<strong>作为专业的医生你会照做么？作为专业的程序员，我们要了解代码变坏的风险并坚持保持代码质量。</strong></p>
+<h5 id="二、什么是整洁代码"><a href="#二、什么是整洁代码" class="headerlink" title="二、什么是整洁代码"></a>二、什么是整洁代码</h5><p>&emsp;&emsp;代码质量评判需要综合各种因素得到的，我们并不能从单一的维度去评判。比如代码可读性好，但是空间与时间复杂度高，这并不能算得上是好代码。好的代码应该具备：<strong>易拓展和维护、简洁（只做好一件事）、可复用性强（没有重复代码）、能快速写出单元测试。可读性强、没有副作用（做了名称以外的工作）。</strong></p>
 <ul>
 <li>易拓展和维护</li>
 </ul>
-<p>&amp;emsp; &amp;emsp;在不破坏原来的代码设计下，可以简单快速的修改和添加代码实现功能拓展。简单地说就是预留了拓展点，将新代码放在设计的可拓展点，不会因为新增一个功能而改动大量原始代码。<strong>对修改关闭，对拓展开放，开闭原则。</strong> 对于开发而言，我们维护旧代码的时间超过新项目新代码的时间。<br>&amp;emsp; &amp;emsp;代码的可维护性就变得很重要，也就是说代码分层清晰、模块划分精当，满足高内聚低耦合、抽象出合理的接口，面向接口编程就意味着有较好的可维护性。同样的代码，熟悉他的资深工程师会觉得很容易维护，而新人因为不熟悉代码，不懂设计模式而无法理解。所以，易拓展具有主观性，我们需要提高基础技能才有资格说代码是否易拓展和维护。</p>
+<p>&emsp; &emsp;在不破坏原来的代码设计下，可以简单快速的修改和添加代码实现功能拓展。简单地说就是预留了拓展点，将新代码放在设计的可拓展点，不会因为新增一个功能而改动大量原始代码。<strong>对修改关闭，对拓展开放，开闭原则。</strong> 对于开发而言，我们维护旧代码的时间超过新项目新代码的时间。<br>&emsp; &emsp;代码的可维护性就变得很重要，也就是说代码分层清晰、模块划分精当，满足高内聚低耦合、抽象出合理的接口，面向接口编程就意味着有较好的可维护性。同样的代码，熟悉他的资深工程师会觉得很容易维护，而新人因为不熟悉代码，不懂设计模式而无法理解。所以，易拓展具有主观性，我们需要提高基础技能才有资格说代码是否易拓展和维护。</p>
 <ul>
 <li>只做好一件事</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;单一职责：每个函数、每个类、每个模块只专注于一件事。不要设计大而全的类或者函数，我们需要将他们拆分成更细粒度功能更加单一的类。它不会隐藏设计者的意图，干净利落的抽象和直截了当的控制语句。我们应该让每个函数每行代码简单、逻辑清晰。这样的话，类依赖和被依赖的类也会变少，减少耦合度。需要注意的是，也不能拆分太细，否则就会破坏内聚性。<strong>高手，就是用最简单的方法去解决复杂问题。</strong></p>
+<p>&emsp;&emsp;单一职责：每个函数、每个类、每个模块只专注于一件事。不要设计大而全的类或者函数，我们需要将他们拆分成更细粒度功能更加单一的类。它不会隐藏设计者的意图，干净利落的抽象和直截了当的控制语句。我们应该让每个函数每行代码简单、逻辑清晰。这样的话，类依赖和被依赖的类也会变少，减少耦合度。需要注意的是，也不能拆分太细，否则就会破坏内聚性。<strong>高手，就是用最简单的方法去解决复杂问题。</strong></p>
 <ul>
 <li>没有重复代码</li>
 </ul>
-<p>&amp;emsp; 在开发过程中，我们应该尽可能抽象出「变与不变」，复用已经存在的代码，不要写重复的代码。比如运用「封装、继承、抽象、多态」特性，代码封装成模块，隐藏变化的细节，暴露不变的接口。把业务与非业务的代码逻辑分析，抽象成通用的框架、工具类等。比如应用模板方法设计模式将不变的算法逻辑框架定义出来，把变化的点延迟到子类重写。</p>
+<p>&emsp; 在开发过程中，我们应该尽可能抽象出「变与不变」，复用已经存在的代码，不要写重复的代码。比如运用「封装、继承、抽象、多态」特性，代码封装成模块，隐藏变化的细节，暴露不变的接口。把业务与非业务的代码逻辑分析，抽象成通用的框架、工具类等。比如应用模板方法设计模式将不变的算法逻辑框架定义出来，把变化的点延迟到子类重写。</p>
 <ul>
 <li>能快速写成单元测试</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;代码的可测试性差，比较难写单元测试，那基本上就能说明代码设计得有问题。试想下，如果一个类大而全，有一个方法依赖了十几个外部对象才能完成工作，耦合严重。当你在编写单元测试的时候，需要 mock 十几个依赖对象和数据。那说明这个代码糟透了，需要合理拆分和设计。</p>
+<p>&emsp;&emsp;代码的可测试性差，比较难写单元测试，那基本上就能说明代码设计得有问题。试想下，如果一个类大而全，有一个方法依赖了十几个外部对象才能完成工作，耦合严重。当你在编写单元测试的时候，需要 mock 十几个依赖对象和数据。那说明这个代码糟透了，需要合理拆分和设计。</p>
 <ul>
 <li>可读性强</li>
 </ul>
 <blockquote>
 <p>软件设计大师 Martin Fowler 说过：「Any fool can write code that a computer can understand. Good programmers write code that humans can understand.」</p>
 </blockquote>
-<p>&amp;emsp; &amp;emsp; 翻译成中文就是：”任何二货都会编写计算机能跑的代码。优秀的程序员能够编写人能够理解的代码。”而可读性就会涉及到编码规范、命名、注释、函数职责是否单一、长度是否精简。有数据显示读代码的时间与写代码的时间比例超过 10：1，并且编写当前代码的难度，取决于读周边代码的难度。所以我认为可读性强是最重要的一点。</p>
-<h5 id="三、高质量命名套路"><a href="#三、高质量命名套路" class="headerlink" title="三、高质量命名套路"></a>三、高质量命名套路</h5><p>&amp;emsp;&amp;emsp; 开发过程后命名随处可见，我们给变量、方法、参数、类、包命名。而命名的好坏会影响我们的可读性，我们不妨从命名作为切入口来写好代码。</p>
+<p>&emsp; &emsp; 翻译成中文就是：”任何二货都会编写计算机能跑的代码。优秀的程序员能够编写人能够理解的代码。”而可读性就会涉及到编码规范、命名、注释、函数职责是否单一、长度是否精简。有数据显示读代码的时间与写代码的时间比例超过 10：1，并且编写当前代码的难度，取决于读周边代码的难度。所以我认为可读性强是最重要的一点。</p>
+<h5 id="三、高质量命名套路"><a href="#三、高质量命名套路" class="headerlink" title="三、高质量命名套路"></a>三、高质量命名套路</h5><p>&emsp;&emsp; 开发过程后命名随处可见，我们给变量、方法、参数、类、包命名。而命名的好坏会影响我们的可读性，我们不妨从命名作为切入口来写好代码。</p>
 <ul>
 <li>勿模糊，准确达意</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;在开发过程中，一旦发现更好的名称，就换掉旧的。一个变量、方法、或者类的名称应该展示出它该有的功能。根据名字我们能知道它能做什么事情，如何使用。<strong>如果一个名称需要大量注释来补充避免使用者跳坑，那就是糟糕的名字。</strong></p>
+<p>&emsp;&emsp;在开发过程中，一旦发现更好的名称，就换掉旧的。一个变量、方法、或者类的名称应该展示出它该有的功能。根据名字我们能知道它能做什么事情，如何使用。<strong>如果一个名称需要大量注释来补充避免使用者跳坑，那就是糟糕的名字。</strong></p>
 <blockquote>
 <ul>
 <li>变量名体现出该字段作用，比如  LocalDate now = LocaDate.now();  now 标识当前时间。</li>
@@ -530,61 +555,58 @@
 <ul>
 <li>反例 1 ：使用魔数</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 从数据库获取列表</span>
-<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> buyerList <span class="token operator">=</span> dao<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-buyerList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>x <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 从数据库获取列表</span>
+List<span class="token operator">&lt;</span>String<span class="token operator">></span> buyerList <span class="token operator">=</span> dao<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+buyerList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>x <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  processedBuyerList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%s,%s"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  processedBuyerList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%s,%s"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>你会疑问，为啥索引是从 1 开始？为啥 &lt;= 5。除此之外， i 与 1 极其相似，难以区分。正确的方式应该使用实际含义的名字让人理解这么写的目的，否则维护的人将痛苦不堪。</p>
 <ul>
 <li>反例 2：使用生僻字，又臭又长</li>
 </ul>
-<pre class="line-numbers language-UltimateAssociatedSubjectRunBatchServiceImpl```，当我们看到这样的类名，是不是不知道怎么读，也不知道如何搜索和定位，更不知道到底表达的意思是什么，可能命这个名字的人还以为准确表达，其实是“王大妈的裹脚布，又臭又长”。原本的业务含义是：执行关联主体任务相关业务类。鉴于此，我们第一步要避免使用生僻字，可以命名为```LinkSubjectServiceImpl```" data-language="UltimateAssociatedSubjectRunBatchServiceImpl```，当我们看到这样的类名，是不是不知道怎么读，也不知道如何搜索和定位，更不知道到底表达的意思是什么，可能命这个名字的人还以为准确表达，其实是“王大妈的裹脚布，又臭又长”。原本的业务含义是：执行关联主体任务相关业务类。鉴于此，我们第一步要避免使用生僻字，可以命名为```LinkSubjectServiceImpl```"><div class="caption"><span>，清晰简单的表达出关联主体的业务逻辑都在该类。</span></div><code class="language-UltimateAssociatedSubjectRunBatchServiceImpl```，当我们看到这样的类名，是不是不知道怎么读，也不知道如何搜索和定位，更不知道到底表达的意思是什么，可能命这个名字的人还以为准确表达，其实是“王大妈的裹脚布，又臭又长”。原本的业务含义是：执行关联主体任务相关业务类。鉴于此，我们第一步要避免使用生僻字，可以命名为```LinkSubjectServiceImpl```">
-
-- 不要误导
-
-&amp;emsp;&amp;emsp; 尽量不要使用不同之处较小的名称，这样让他人无法一眼区分两个名称是啥意思。例如：函数 deleteIndex 和函数deleteIndexEx，这两个函数名区别很小了，加之函数 deleteIndexEx后面Ex还是缩写，也不知道是什么意思，所以他人只能去看函数内容才能明白两者的区别。
-
-&gt; * XYZStringHandler与 XYZStringStorage。
-&gt; * UserController与 UserInfoController。
-
-让人抓狂，他们到底是一个东西还是不同的？差别在哪？没有两年脑血栓写不出这样的。
-
-
-- 反例 3：名不副实
-
-下面是一个生成文件并提供下载功能的接口。
-``` Java
-public void downloadExcel(HttpServletResponse response) {
- List&lt;File&gt; files = listFile();
+<p><code>UltimateAssociatedSubjectRunBatchServiceImpl</code>，当我们看到这样的类名，是不是不知道怎么读，也不知道如何搜索和定位，更不知道到底表达的意思是什么，可能命这个名字的人还以为准确表达，其实是“王大妈的裹脚布，又臭又长”。原本的业务含义是：执行关联主体任务相关业务类。鉴于此，我们第一步要避免使用生僻字，可以命名为<code>LinkSubjectServiceImpl</code> ，清晰简单的表达出关联主体的业务逻辑都在该类。</p>
+<ul>
+<li>不要误导</li>
+</ul>
+<p>&emsp;&emsp; 尽量不要使用不同之处较小的名称，这样让他人无法一眼区分两个名称是啥意思。例如：函数 deleteIndex 和函数deleteIndexEx，这两个函数名区别很小了，加之函数 deleteIndexEx后面Ex还是缩写，也不知道是什么意思，所以他人只能去看函数内容才能明白两者的区别。</p>
+<blockquote>
+<ul>
+<li>XYZStringHandler与 XYZStringStorage。</li>
+<li>UserController与 UserInfoController。</li>
+</ul>
+</blockquote>
+<p>让人抓狂，他们到底是一个东西还是不同的？差别在哪？没有两年脑血栓写不出这样的。</p>
+<ul>
+<li>反例 3：名不副实</li>
+</ul>
+<p>下面是一个生成文件并提供下载功能的接口。</p>
+<pre class="line-numbers language-Java"><code class="language-Java">public void downloadExcel(HttpServletResponse response) {
+ List<File> files = listFile();
  String fileName = System.currentTimeMillis() + ".zip";
  DownloadZip.downLoadFiles(files, filePath);
  DownloadZip.fileDownload(response, filePath, fileName);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>我们会疑惑，<code>downLoadFiles </code>与 <code>fileDownload</code> 到底有啥区别？为啥要调用两次。这种真的是十年脑血栓才写得出来。<code>downLoadFiles</code> 的功能是创建将 files 打包成 zip 文件，而  <code>fileDownload</code>则是把指定的文件输出给浏览器下载。所以 <code>downLoadFiles</code> 应该命名为 <code>createZipFile</code>用于合理区分避免误人子弟。</p>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们会疑惑，<code>downLoadFiles</code>与 <code>fileDownload</code> 到底有啥区别？为啥要调用两次。这种真的是十年脑血栓才写得出来。<code>downLoadFiles</code> 的功能是创建将 files 打包成 zip 文件，而  <code>fileDownload</code>则是把指定的文件输出给浏览器下载。所以 <code>downLoadFiles</code> 应该命名为 <code>createZipFile</code>用于合理区分避免误人子弟。</p>
 <ul>
 <li>做有意义的区分</li>
 </ul>
-<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">getActiveOrder();
+<pre class="line-numbers language-Java"><code class="language-Java">getActiveOrder();
 getActiveOrderInfo();
 getActiveOrderData();
 getActiveOrders();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上面都是废话命名，别人你怎么知道到底该调用那个方法？哪个表示订单明细？还是历史订单，还是全部订单查询，废话是另一种没有意义的区分。<strong>名称不同，意思却无差别。</strong></p>
-<pre class="line-numbers language-Order、OrderInfo、OrderData```，他们名称相同" data-language="Order、OrderInfo、OrderData```，他们名称相同"><div class="caption"><span>，意思却无差别，**属于毫无意义的废话**。如果缺少明确约定，变量moneyAmount就与money没区别。Variable一词永远不应当出现在变量名中。Table一词永远不应当出现在表名中。</span></div><code class="language-Order、OrderInfo、OrderData```，他们名称相同">
-- 结合上下文简化名称
-
-``` Java
-public class Order {
+<p>上面都是废话命名，别人你怎么知道到底该调用那个方法？哪个表示订单明细？还是历史订单，还是全部订单查询，废话是另一种没有意义的区分。<strong>名称不同，意思却无差别。</strong><br><code>Order、OrderInfo、OrderData</code>，他们名称相同 ，意思却无差别，<strong>属于毫无意义的废话</strong>。如果缺少明确约定，变量moneyAmount就与money没区别。Variable一词永远不应当出现在变量名中。Table一词永远不应当出现在表名中。</p>
+<ul>
+<li>结合上下文简化名称</li>
+</ul>
+<pre class="line-numbers language-Java"><code class="language-Java">public class Order {
   private String orderNum;
   private String orderCreateTime;
   //...
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>比如 Order类，在该上下文中，没必要给每个成员变量重复添加 order 这个前缀单词，直接命名为 createTime、num。因为我们可以借助 Order 这个上下文来获取信息。</p>
-<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">Order order = new Order();
+<pre class="line-numbers language-Java"><code class="language-Java">Order order = new Order();
 order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>名称易读、可搜索</li>
@@ -593,15 +615,15 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 <ul>
 <li>可读</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;名称读不出来，在讨论的时候就好像是一个沙雕。哎，那个「treeNewBeeAxibaKula」类是什么作用？听到这样的名字尴尬癌都犯了。使用一些生僻字，犹如「王大妈的裹脚布，又长又臭」，没有两年脑血栓写不出这样的垃圾代码。</p>
+<p>&emsp;&emsp;名称读不出来，在讨论的时候就好像是一个沙雕。哎，那个「treeNewBeeAxibaKula」类是什么作用？听到这样的名字尴尬癌都犯了。使用一些生僻字，犹如「王大妈的裹脚布，又长又臭」，没有两年脑血栓写不出这样的垃圾代码。</p>
 <ul>
 <li>可搜索</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;IED 很智能，当我们输入 「Hash」的时候，会列举出所有 Hash 相关的类。命名的时候最好符合项目命名习惯，列表数据查询大家使用 listXXX，你就不要用 queryXXX，统一命名规范，很重要。</p>
+<p>&emsp;&emsp;IED 很智能，当我们输入 「Hash」的时候，会列举出所有 Hash 相关的类。命名的时候最好符合项目命名习惯，列表数据查询大家使用 listXXX，你就不要用 queryXXX，统一命名规范，很重要。</p>
 <ul>
 <li>包命名</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;<strong>包名</strong>统一使用<strong>小写，点分隔符</strong>之间有且仅有一个自然语义的英文单词或者多个单词自然连接到一块（如 springframework，deepspace 不需要使用任何分割）。包名的构成可以分为以下几四部分【前缀】 【发起者名】【项目名】【模块名】。</p>
+<p>&emsp;&emsp;<strong>包名</strong>统一使用<strong>小写，点分隔符</strong>之间有且仅有一个自然语义的英文单词或者多个单词自然连接到一块（如 springframework，deepspace 不需要使用任何分割）。包名的构成可以分为以下几四部分【前缀】 【发起者名】【项目名】【模块名】。</p>
 <blockquote>
 <p>以下表格授权于「Java 填坑笔记」</p>
 </blockquote>
@@ -643,7 +665,7 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 <ul>
 <li>类名</li>
 </ul>
-<p>&amp;emsp;&amp;emsp; <strong>类名使用大驼峰命名形式，</strong> 应该使用<strong>名词或者名词短语</strong>，比如：Customer、Account。避免使用 Manager、Processor 等动词。接口名除了用名词和名词短语以外，还可以使用形容词或形容词短语，如 Cloneable，Callable 等，表示实现该接口的类有某种功能或能力。</p>
+<p>&emsp;&emsp; <strong>类名使用大驼峰命名形式，</strong> 应该使用<strong>名词或者名词短语</strong>，比如：Customer、Account。避免使用 Manager、Processor 等动词。接口名除了用名词和名词短语以外，还可以使用形容词或形容词短语，如 Cloneable，Callable 等，表示实现该接口的类有某种功能或能力。</p>
 <table>
 <thead>
 <tr>
@@ -701,11 +723,11 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 <ul>
 <li>方法名</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;方法命名一般为动词或动词短语，与参数或参数名共同组成动宾短语，即动词 + 名词。一个好的函数名一般能通过名字直接获知该函数实现什么样的功能。</p>
+<p>&emsp;&emsp;方法命名一般为动词或动词短语，与参数或参数名共同组成动宾短语，即动词 + 名词。一个好的函数名一般能通过名字直接获知该函数实现什么样的功能。</p>
 <ul>
 <li>布尔返回值的方法</li>
 </ul>
-<p>&amp;emsp;&amp;emsp;注：Prefix-前缀，Suffix-后缀，Alone-单独使用</p>
+<p>&emsp;&emsp;注：Prefix-前缀，Suffix-后缀，Alone-单独使用</p>
 <table>
 <thead>
 <tr>
@@ -772,7 +794,7 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 </tr>
 <tr>
 <td>Prefix</td>
-<td>try	尝试执行，失败时抛出异常或是返回errorcode</td>
+<td>try    尝试执行，失败时抛出异常或是返回errorcode</td>
 <td>tryCreate</td>
 <td></td>
 </tr>
@@ -785,7 +807,7 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 <tr>
 <td>Suffix</td>
 <td>OrElse</td>
-<td>尝试执行、失败时返回实际参数中指定的值	getOrElse</td>
+<td>尝试执行、失败时返回实际参数中指定的值    getOrElse</td>
 <td></td>
 </tr>
 <tr>
@@ -1255,7 +1277,7 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 <td align="left">clear 清除</td>
 </tr>
 <tr>
-<td align="left">index 索引	sort 排序</td>
+<td align="left">index 索引    sort 排序</td>
 <td align="left"></td>
 </tr>
 <tr>
@@ -1380,101 +1402,18 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 </tr>
 </tbody></table>
 
-                
             </div>
-            <hr/>
+            <hr />
 
             
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">沙九</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="http://shajiu.com/2022/02/17/java-dai-ma-ming-ming-ji-qiao/">http://shajiu.com/2022/02/17/java-dai-ma-ming-ming-ji-qiao/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">沙九</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/%E4%B8%93%E4%B8%9A/">
-                                    <span class="chip bg-color">专业</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-                <style>
+            <style>
     #reward {
         margin: 40px 0;
         text-align: center;
     }
 
     #reward .reward-link {
-        font-size: 1.4rem;
-        line-height: 38px;
+        font-size: 1.88rem;
     }
 
     #reward .btn-floating:hover {
@@ -1560,13 +1499,13 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 </style>
 
 <div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
 
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -1590,19 +1529,85 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
         $('.tabs').tabs();
     });
 </script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《Java代码命名技巧》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2022/02/17/java-dai-ma-ming-ming-ji-qiao/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                沙九
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
         </div>
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
 
-    
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
 
-    
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '查教程获取',
+        clientSecret: '查教程获取',
+        repo: 'Shajiu.github.io',
+        owner: 'shajiu',
+        admin: "Shajiu",
+        id: '2022/02/17/java-dai-ma-ming-ming-ji-qiao/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-    
-
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -1620,13 +1625,13 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2022/02/26/python-zhong-de-guan-jian-han-shu-hui-zong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Python中的关键函数汇总">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Python中的关键函数汇总">
                         
                         <span class="card-title">Python中的关键函数汇总</span>
                     </div>
@@ -1634,18 +1639,21 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Python中的关键函数汇总
+统计字符串中字符出现为次数import collections
+print(collections.Counter("abcdef"))
+Counter({'a': 1, 'b': 1, 'c': 1, 'd'
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-26
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-02-26
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%AD%E8%A8%80/" class="post-category">
+                            <a href="/categories/语言/" class="post-category" target="_blank">
                                     语言
                                 </a>
                             
@@ -1656,7 +1664,7 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B8%93%E4%B8%9A/">
+                    <a href="/tags/专业/" target="_blank">
                         <span class="chip bg-color">专业</span>
                     </a>
                     
@@ -1668,14 +1676,14 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2022/01/28/cang-yu-shou-xie-zi-mu-yu-pyqt-de-peng-zhuang-ji-yu-pytorch-kuang-jia-lenet-5-wang-luo-de-tu-xing-hua-cang-wen-shou-xie-zi-mu-shi-bie-xi-tong-so-easy/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So Easy">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So Easy">
                         
                         <span class="card-title">藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So Easy</span>
                     </div>
@@ -1683,18 +1691,18 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So Easy引言：&ensp;&ensp;今天我通过PyTorch框架，使用LeNet-5网络实现手写藏文字母的识别系统。为了能够更好友好利
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-01-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CV/" class="post-category">
+                            <a href="/categories/CV/" class="post-category" target="_blank">
                                     CV
                                 </a>
                             
@@ -1705,7 +1713,7 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B8%93%E4%B8%9A/">
+                    <a href="/tags/专业/" target="_blank">
                         <span class="chip bg-color">专业</span>
                     </a>
                     
@@ -1716,39 +1724,50 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
         
     </div>
 </article>
-
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
 
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
 
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
 
-  <!-- 是否加载使用自带的 prismjs. -->
-  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
 
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 沙九的博客<br />'
+            + '作者: 沙九<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1758,7 +1777,7 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
 
 <div id="floating-toc-btn" class="hide-on-med-and-down">
     <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
+        <i class="fa fa-list"></i>
     </a>
 </div>
 
@@ -1770,8 +1789,21 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
         });
 
         // Set scroll toc fixed.
@@ -1814,10 +1846,10 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
         let $mainContent = $('#main-content');
         $('#floating-toc-btn .btn-floating').click(function () {
             if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
+                $tocAside.removeClass(expandedClass).slideUp(500);
                 $mainContent.removeClass('l9');
             } else {
-                $tocAside.addClass(expandedClass).show();
+                $tocAside.addClass(expandedClass).slideDown(500);
                 $mainContent.addClass('l9');
             }
             fixPostCardWidth('artDetail', 'prenext-posts');
@@ -1825,153 +1857,161 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
         
     });
 </script>
-
     
 
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 
 
     <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="/libs/aplayer/Meting.min.js"></script>
-
-    
-
-    <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+    <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2019-2022</span>
-            
-            <a href="/about" target="_blank">沙九</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
-            
-            
-            
-                
-            
-            
-                <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
-            
-            <br>
+            &copy; 2021起 沙九. 版权所有
 
-            <!-- 运行天数提醒. -->
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">48.8k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
             
             <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/Shajiu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
+    <a href="https://github.com/shajiu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
     </a>
 
 
 
     <a href="mailto:18810979033@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
+        <i class="fa fa-envelope-open"></i>
     </a>
 
 
 
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2495957419" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2495957419" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
+    <a href="https://zhihu.com/people/shajiu" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
     </a>
 
 
 
-    <a href="https://shajiu.github.io" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://shajiu.github.io" data-position="top" data-delay="50">
-        <i class="fab fa-weibo"></i>
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=792321264&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
     </a>
 
 
+
+    <a href="https://weibo.com/shajiu" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
-
 </div>
     </div>
 </footer>
 
 <div class="progress-bar"></div>
 
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2021, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
             <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
@@ -1979,102 +2019,16 @@ order.getCreateTime();<span aria-hidden="true" class="line-numbers-rows"><span><
     </div>
 </div>
 
+<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    };
-
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fa fa-angle-up"></i>
     </a>
 </div>
 
@@ -2086,61 +2040,33 @@ $(function () {
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
-    
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
 
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <!-- 雪花特效 -->
-    
-
-    <!-- 鼠标星星特效 -->
-    
-
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
-    
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=查教程获取"></script>
 <script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '查教程获取');
 </script>
 
+
+
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="/libs/others/clicklove.js"></script>
     
+
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
-    
-
-    
-
-    <!--腾讯兔小巢-->
-    
-    
-
-    
-
-    
-
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <!-- 雪花特效 -->
     
 
 </body>

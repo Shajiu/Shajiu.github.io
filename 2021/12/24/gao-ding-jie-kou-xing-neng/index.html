@@ -2,9 +2,12 @@
 <html lang="zh-CN">
 
 
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="搞定接口性能, ECNU NLP DeepLearning AntNLP 沙九 甘南第一勇士 自然语言处理 机器学习 深度学习 机器翻译 藏语信息处理 源码上门取算法码上来">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="1、前言接口性能优化对于从事后端开发的同学来说，肯定再熟悉不过了，因为它是一个跟开发语言无关的公共问题。该问题说简单也简单，说复杂也复杂。有时候，只需加个索引就能解决问题；有时候，需要做代码重构；有时候，需要增加缓存；有时候，需要引入一些中">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,32 +16,61 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    
-
     <title>搞定接口性能 | 沙九的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
 
-    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce84511d3df71640a9378a69f6293044";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
-<meta name="generator" content="Hexo 6.2.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="沙九的博客" type="application/atom+xml">
-</head>
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
 
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -52,93 +84,78 @@
             </div>
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
     
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
     
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
     
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
     
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
 </ul>
-
 
 <div id="mobile-nav" class="side-nav sidenav">
 
@@ -154,96 +171,83 @@
         </div>
     </div>
 
+    
+
     <ul class="menu-list mobile-menu-list">
         
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                留言板
+            </a>
         </li>
         
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/Shajiu/" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
         
     </ul>
 </div>
-
 
         </div>
 
@@ -293,7 +297,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Shajiu/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -309,21 +313,35 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">搞定接口性能</h1>
+                    <div class="description center-align post-title">
+                        搞定接口性能
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 
 
@@ -355,12 +373,12 @@
     }
 
     .toc-widget {
-        width: 345px;
         padding-left: 20px;
     }
 
     .toc-widget .toc-title {
-        padding: 35px 0 15px 17px;
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -369,11 +387,6 @@
     .toc-widget ol {
         padding: 0;
         list-style: none;
-    }
-
-    #toc-content {
-        padding-bottom: 30px;
-        overflow: auto;
     }
 
     #toc-content ol {
@@ -393,19 +406,19 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
     }
 
     #toc-content .is-active-link {
         color: #42b983;
     }
 
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
     #floating-toc-btn {
         position: fixed;
-        right: 15px;
+        right: 20px;
         bottom: 76px;
         padding-top: 15px;
         margin-bottom: 0;
@@ -433,9 +446,9 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/">
-                                <span class="chip bg-color">个人提升</span>
-                            </a>
+                        <a href="/tags/个人提升/" target="_blank">
+                            <span class="chip bg-color">个人提升</span>
+                        </a>
                         
                     </div>
                     
@@ -443,11 +456,11 @@
                 <div class="col s5 right-align">
                     
                     <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%91%A8%E6%80%BB%E7%BB%93/" class="post-category">
-                                周总结
-                            </a>
+                        <a href="/categories/周总结/" class="post-category" target="_blank">
+                            周总结
+                        </a>
                         
                     </div>
                     
@@ -455,31 +468,43 @@
             </div>
 
             <div class="post-info">
-                
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2021-12-24
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    沙九
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.9k
                 </div>
                 
 
                 
-
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    28 分
+                </div>
+                
                 
 
                 
-
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
                 
             </div>
         </div>
         <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
-
-        
-
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h4><p>接口性能优化对于从事后端开发的同学来说，肯定再熟悉不过了，因为它是一个跟开发语言无关的公共问题。该问题说简单也简单，说复杂也复杂。有时候，只需加个索引就能解决问题；有时候，需要做代码重构；有时候，需要增加缓存；有时候，需要引入一些中间件，比如mq；有时候，需要需要分库分表；有时候，需要拆分服务等一系列的操作。导致接口性能问题的原因也是千奇百怪，不同的项目不同的接口，原因可能也不一样。本文总结了一些行之有效的，优化接口性能的办法，给有需要的朋友一个参考。</p>
@@ -490,41 +515,42 @@
 <li>③mysql选错索引了没？</li>
 </ul>
 <h5 id="2-1-没加索引"><a href="#2-1-没加索引" class="headerlink" title="2.1 没加索引"></a>2.1 没加索引</h5><p>sql语句中<code>where</code>条件的关键字段，或者<code>order by</code>后面的排序字段，忘记了加索引，这个问题在项目中很常见。项目刚开始的时候，由于表中的数据量小，加不加索引sql查询性能差别不大。后来，随着业务的发展，表中数据量越来越多，就不得不加索引了。<br>可以通过命令：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">index</span> <span class="token keyword">from</span> <span class="token identifier"><span class="token punctuation">`</span>jiu<span class="token punctuation">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> 能单独查看某张表的索引情况，也可以通过如下命令查看<br> </p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> <span class="token identifier"><span class="token punctuation">`</span>jiu<span class="token punctuation">`</span></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br>查看整张表的建表语句，里面同样会显示索引情况。通过ALTER TABLE命令可以添加索引：<p></p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>jiu<span class="token punctuation">`</span></span> <span class="token keyword">ADD</span> <span class="token keyword">INDEX</span> idx_name <span class="token punctuation">(</span>dep_code<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">index</span> <span class="token keyword">from</span> <span class="token punctuation">`</span>jiu<span class="token punctuation">`</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> 能单独查看某张表的索引情况，也可以通过如下命令查看</p>
+<pre class="line-numbers language-sql"><code class="language-sql">  <span class="token keyword">show</span> <span class="token keyword">create</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>jiu<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看整张表的建表语句，里面同样会显示索引情况。通过ALTER TABLE命令可以添加索引：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>jiu<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token keyword">INDEX</span> idx_name <span class="token punctuation">(</span>dep_code<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>也可以通过CREATE INDEX命令添加索引：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> idx_name <span class="token keyword">ON</span> <span class="token identifier"><span class="token punctuation">`</span>sha<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>com_code<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> idx_name <span class="token keyword">ON</span> <span class="token punctuation">`</span>sha<span class="token punctuation">`</span> <span class="token punctuation">(</span>com_code<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>不过这里有一个需要注意的地方是：想通过命令修改索引，是不行的。目前在mysql中如果想要修改索引，只能先删除索引，再重新添加新的。删除索引可以用DROP INDEX命令：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>jiu<span class="token punctuation">`</span></span> <span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> idx_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>jiu<span class="token punctuation">`</span> <span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> idx_name<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>用DROP INDEX命令也行：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> idx_name <span class="token keyword">ON</span> <span class="token identifier"><span class="token punctuation">`</span>jiu<span class="token punctuation">`</span></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> idx_name <span class="token keyword">ON</span> <span class="token punctuation">`</span>jiu<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="2-2-索引没生效"><a href="#2-2-索引没生效" class="headerlink" title="2.2  索引没生效"></a>2.2  索引没生效</h5><p>通过上面的命令我们已经能够确认索引是有的，但它生效了没？此时你内心或许会冒出这样一个疑问。那么，如何查看索引有没有生效呢？<br>可以使用explain命令，查看mysql的执行计划，它会显示索引的使用情况。</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">explain</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token identifier"><span class="token punctuation">`</span>jiu<span class="token punctuation">`</span></span> <span class="token keyword">where</span> code<span class="token operator">=</span><span class="token string">'002'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://s3.bmp.ovh/imgs/2021/12/085a0fc2c433c52c.jpg" alt="检查索引是否生效"><br>通过这几列可以判断索引使用情况，执行计划包含列的含义如下图所示：<br><img src="https://s2.loli.net/2021/12/27/zCaDTuM5h6A1XYO.jpg" alt="判断索引的使用情况"><br>如果想进一步了解explain的详细用法，可以点击<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&amp;mid=2247490262&amp;idx=1&amp;sn=a67f610afa984ecca130a54a3be453ab&amp;chksm=c0ebc23ef79c4b2869dea998e413c5cbea6aeeea01ee74efc7c1a5fc228baa7beca215adf3ea&amp;token=751314179&amp;lang=zh_CN&amp;scene=21#wechat_redirect">这里</a>进一步了解。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">explain</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token punctuation">`</span>jiu<span class="token punctuation">`</span> <span class="token keyword">where</span> code<span class="token operator">=</span><span class="token string">'002'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://s3.bmp.ovh/imgs/2021/12/085a0fc2c433c52c.jpg" alt="检查索引是否生效"><br>通过这几列可以判断索引使用情况，执行计划包含列的含义如下图所示：<br><img src="https://s2.loli.net/2021/12/27/zCaDTuM5h6A1XYO.jpg" alt="判断索引的使用情况"><br>如果想进一步了解explain的详细用法，可以点击<a href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&mid=2247490262&idx=1&sn=a67f610afa984ecca130a54a3be453ab&chksm=c0ebc23ef79c4b2869dea998e413c5cbea6aeeea01ee74efc7c1a5fc228baa7beca215adf3ea&token=751314179&lang=zh_CN&scene=21#wechat_redirect" target="_blank" rel="noopener">这里</a>进一步了解。</p>
 <p>sql语句没有走索引，排除没有建索引之外，最大的可能性是索引失效了。<br>索引失效的常见原因如下：<br><img src="https://s2.loli.net/2021/12/27/OFoxLYM21aTjhHP.jpg" alt="索引失效常见的原因"><br>如果不是因为以上原因所导致，则需要按照具体问题具体分析方式进行排查确定。</p>
 <h5 id="2-3-选错索引"><a href="#2-3-选错索引" class="headerlink" title="2.3 选错索引"></a>2.3 选错索引</h5><p>此外，有时我们会遇到一种明明是同一条sql，只有入传不同而已。有的时候走的索引为a，有的时候走的索引为b?<br>没错，有时候mysql会选错索引。必要时可以使用force index来强制查询sql走某个索引。<br>例如：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ws_shop a
-<span class="token keyword">where</span> <span class="token keyword">date</span><span class="token punctuation">(</span>create_time<span class="token operator">-</span><span class="token keyword">interval</span> <span class="token number">6</span> <span class="token keyword">hour</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token string">'2016-10-01 06:000'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ws_shop <span class="token number">a</span>
+<span class="token keyword">where</span> <span class="token keyword">date</span><span class="token punctuation">(</span>create_time<span class="token operator">-</span>interval <span class="token number">6</span> hour<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token string">'2016-10-01 06:000'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>改写为：</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ws_shop a <span class="token keyword">force</span> <span class="token keyword">index</span><span class="token punctuation">(</span>create_time<span class="token punctuation">)</span>
-<span class="token keyword">where</span> <span class="token keyword">date</span><span class="token punctuation">(</span>create_time<span class="token operator">-</span><span class="token keyword">interval</span> <span class="token number">6</span> <span class="token keyword">hour</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token string">'2016-10-01 06:00:00'</span><span class="token keyword">sql</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="3、sql优化"><a href="#3、sql优化" class="headerlink" title="3、sql优化"></a>3、sql优化</h4><p>如果优化了索引之后，也没有啥效果，那么接下来试着优化一下sql语句，因为它的改造相对java代码而言要小的多。<br>如下图为优化sql的15个小技巧：<br><img src="https://s2.loli.net/2021/12/27/5hbCqESgdcTJ67B.jpg" alt="15个优化sql的方法"><br>此方法具体可以点击<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&amp;mid=2247490473&amp;idx=1&amp;sn=ba07d64aa8c89054bd263efd660d3a3f&amp;chksm=c0ebc341f79c4a579a6f41465df0459a696ab8ef0499a5f6fd76269af1064fde0286afdb027d&amp;token=2041133408&amp;lang=zh_CN&amp;scene=21#wechat_redirect">这里</a>进一步了解。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ws_shop <span class="token number">a</span> <span class="token keyword">force</span> <span class="token keyword">index</span><span class="token punctuation">(</span>create_time<span class="token punctuation">)</span>
+<span class="token keyword">where</span> <span class="token keyword">date</span><span class="token punctuation">(</span>create_time<span class="token operator">-</span>interval <span class="token number">6</span> hour<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token string">'2016-10-01 06:00:00'</span>sql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="3、sql优化"><a href="#3、sql优化" class="headerlink" title="3、sql优化"></a>3、sql优化</h4><p>如果优化了索引之后，也没有啥效果，那么接下来试着优化一下sql语句，因为它的改造相对java代码而言要小的多。<br>如下图为优化sql的15个小技巧：<br><img src="https://s2.loli.net/2021/12/27/5hbCqESgdcTJ67B.jpg" alt="15个优化sql的方法"><br>此方法具体可以点击<a href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&mid=2247490473&idx=1&sn=ba07d64aa8c89054bd263efd660d3a3f&chksm=c0ebc341f79c4a579a6f41465df0459a696ab8ef0499a5f6fd76269af1064fde0286afdb027d&token=2041133408&lang=zh_CN&scene=21#wechat_redirect" target="_blank" rel="noopener">这里</a>进一步了解。</p>
 <h4 id="4、远程调用"><a href="#4、远程调用" class="headerlink" title="4、远程调用"></a>4、远程调用</h4><p>在很多引用场景中，我们需要在某个接口中，调用其他服务的接口。例如如下业务场景：在用户信息查询接口中需要返回：用户名称、性别、等级、头像、积分、成长值等信息。而用户名称、性别、等级、头像在用户服务中，积分在积分服务中，成长值在成长值服务中。为了汇总这些数据统一返回，需要另外提供一个对外接口服务。<br>具体如下实例所示：<br><img src="https://s2.loli.net/2021/12/27/ljLa8qtWsTCYkxJ.jpg" alt="远程调用的实例接口流程图"><br>此调用远程接口总耗时530ms=200ms+150ms+180ms。显然这种串行调用的远程接口性能是非常不好的，调用远程接口总的耗时为所有的远程接口耗时之和。那么有没有解决方法呢？</p>
 <h5 id="4-1-并行调用"><a href="#4-1-并行调用" class="headerlink" title="4.1 并行调用"></a>4.1 并行调用</h5><p>上面说到，既然串行调用多个远程接口性能很差，为什么不改成并行呢？如下图所示：<br><img src="https://s2.loli.net/2021/12/27/nZhCqJReUIPwduF.jpg" alt="接口并行调用的实例图"></p>
 <p>调用远程接口总耗时 200ms = 200ms（即耗时最长的那次远程接口调用）。在java8之前可以通过实现Callable接口，获取线程返回结果。java8以后通过CompleteFuture类实现该功能。我们这里以CompleteFuture为例：</p>
-<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public UserInfo getUserInfo(Long id) throws InterruptedException, ExecutionException {
+<pre class="line-numbers language-Java"><code class="language-Java">public UserInfo getUserInfo(Long id) throws InterruptedException, ExecutionException {
     final UserInfo userInfo = new UserInfo();
-    CompletableFuture userFuture = CompletableFuture.supplyAsync(() -&gt; {
+    CompletableFuture userFuture = CompletableFuture.supplyAsync(() -> {
         getRemoteUserAndFill(id, userInfo);
         return Boolean.TRUE;
     }, executor);
-    CompletableFuture bonusFuture = CompletableFuture.supplyAsync(() -&gt; {
+    CompletableFuture bonusFuture = CompletableFuture.supplyAsync(() -> {
         getRemoteBonusAndFill(id, userInfo);
         return Boolean.TRUE;
     }, executor);
-    CompletableFuture growthFuture = CompletableFuture.supplyAsync(() -&gt; {
+    CompletableFuture growthFuture = CompletableFuture.supplyAsync(() -> {
         getRemoteGrowthAndFill(id, userInfo);
         return Boolean.TRUE;
     }, executor);
@@ -538,48 +564,46 @@
 <p>温馨提醒一下，这两种方式别忘了使用线程池。示例中我用到了executor，表示自定义的线程池，为了防止高并发场景下，出现线程过多的问题。</p>
 </blockquote>
 <h5 id="4-2-数据异构"><a href="#4-2-数据异构" class="headerlink" title="4.2  数据异构"></a>4.2  数据异构</h5><p>上面说到的用户信息查询接口需要调用用户查询接口、积分查询接口和成长值查询接口，然后汇总数据统一返回。那么，我们能不能把数据冗余一下，把用户信息、积分和成长值的数据统一存储到一个地方，比如：redis，存的数据结构就是用户信息查询接口所需要的内容。然后通过用户id，直接从redis中查询数据出来，不就OK了？<br>如果在高并发的场景下，为了提升接口性能，远程接口调用大概率会被去掉，而改成保存冗余数据的数据异构方案。<br><img src="https://s2.loli.net/2021/12/27/4iTCKUbwJj2c79E.jpg" alt="数据异构流程图"><br>但需要注意的是，如果使用了数据异构方案，就可能会出现数据一致性问题。用户信息、积分和成长值有更新的话，大部分情况下，会先更新到数据库，然后同步到redis。但这种跨库的操作，可能会导致两边数据不一致的情况产生。</p>
-<h4 id="5、重复调用"><a href="#5、重复调用" class="headerlink" title="5、重复调用"></a>5、重复调用</h4><pre class="line-numbers language-重复调用```在我们日常工作代码中可以说随处可见，但如果没有控制好，会非常影响接口的性能。不信，咱可以一起康康呀！" data-language="重复调用```在我们日常工作代码中可以说随处可见，但如果没有控制好，会非常影响接口的性能。不信，咱可以一起康康呀！"><code class="language-重复调用```在我们日常工作代码中可以说随处可见，但如果没有控制好，会非常影响接口的性能。不信，咱可以一起康康呀！">##### 5.1 循环查数据库
-有时候，我们需要从指定的用户集合中，查询出有哪些是在数据库中已经存在的。实现代码可以这样写：
-``` java
-public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
-    if (CollectionUtils.isEmpty(searchList)) {
-        return Collections.emptyList();
-    }
-    List&lt;User&gt; result = Lists.newArrayList();
-    searchList.forEach(user -&gt; result.add(userMapper.getUserById(user.getId())));
-    return result;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5、重复调用"><a href="#5、重复调用" class="headerlink" title="5、重复调用"></a>5、重复调用</h4><p><code>重复调用</code>在我们日常工作代码中可以说随处可见，但如果没有控制好，会非常影响接口的性能。不信，咱可以一起康康呀！</p>
+<h5 id="5-1-循环查数据库"><a href="#5-1-循环查数据库" class="headerlink" title="5.1 循环查数据库"></a>5.1 循环查数据库</h5><p>有时候，我们需要从指定的用户集合中，查询出有哪些是在数据库中已经存在的。实现代码可以这样写：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> List<span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token function">queryUser</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>User<span class="token operator">></span> searchList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>CollectionUtils<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>searchList<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Collections<span class="token punctuation">.</span><span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    List<span class="token operator">&lt;</span>User<span class="token operator">></span> result <span class="token operator">=</span> Lists<span class="token punctuation">.</span><span class="token function">newArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    searchList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>user <span class="token operator">-</span><span class="token operator">></span> result<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>userMapper<span class="token punctuation">.</span><span class="token function">getUserById</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里如果有50个用户，则需要循环50次，去查询数据库。我们都知道，每查询一次数据库，就是一次远程调用。如果查询50次数据库，就有50次远程调用，这是非常耗时的操作。那么，我们如何优化呢？优化的具体代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
+<pre><code>public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
     if (CollectionUtils.isEmpty(searchList)) {
         return Collections.emptyList();
     }
     List&lt;Long&gt; ids = searchList.stream().map(User::getId).collect(Collectors.toList());
     return userMapper.getUserByIds(ids);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>提供一个根据用户id集合批量查询用户的接口，只远程调用一次，就能查询出所有的数据。</p>
+}</code></pre><p>提供一个根据用户id集合批量查询用户的接口，只远程调用一次，就能查询出所有的数据。</p>
 <blockquote>
 <p>这里有个需要注意的地方是：id集合的大小要做限制，最好一次不要请求太多的数据。要根据实际情况而定，建议控制每次请求的记录条数在500以内。</p>
 </blockquote>
 <h5 id="5-2-死循环"><a href="#5-2-死循环" class="headerlink" title="5.2 死循环"></a>5.2 死循环</h5><p>有些小伙伴看到这个标题，可能会感到有点意外，死循环也算？代码中不是应该避免死循环吗？为啥还是会产生死循环？有时候死循环是我们自己写的，例如下面这段代码：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"do samething"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"do samething"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里使用了while(true)的循环调用，这种写法在CAS自旋锁中使用比较多。当满足condition等于true的时候，则自动退出该循环。如果condition条件非常复杂，一旦出现判断不正确，或者少写了一些逻辑判断，就可能在某些场景下出现死循环的问题。出现死循环，大概率是开发人员人为的bug导致的，不过这种情况很容易被测出来。</p>
 <blockquote>
 <p>还有一种隐藏的比较深的死循环，是由于代码写的不太严谨导致的。如果用正常数据，可能测不出问题，但一旦出现异常数据，就会立即出现死循环。</p>
 </blockquote>
 <h5 id="5-3-无限递归"><a href="#5-3-无限递归" class="headerlink" title="5.3  无限递归"></a>5.3  无限递归</h5><p>如果想要打印某个分类的所有父分类，可以使用类似的这样的递归方法实现：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printCategory</span><span class="token punctuation">(</span><span class="token class-name">Category</span> category<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span>category <span class="token operator">==</span> <span class="token keyword">null</span>
-      <span class="token operator">||</span> category<span class="token punctuation">.</span><span class="token function">getParentId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printCategory</span><span class="token punctuation">(</span>Category category<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>category <span class="token operator">==</span> null
+      <span class="token operator">||</span> category<span class="token punctuation">.</span><span class="token function">getParentId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
      <span class="token keyword">return</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"父分类名称："</span><span class="token operator">+</span> category<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token class-name">Category</span> parent <span class="token operator">=</span> categoryMapper<span class="token punctuation">.</span><span class="token function">getCategoryById</span><span class="token punctuation">(</span>category<span class="token punctuation">.</span><span class="token function">getParentId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"父分类名称："</span><span class="token operator">+</span> category<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Category parent <span class="token operator">=</span> categoryMapper<span class="token punctuation">.</span><span class="token function">getCategoryById</span><span class="token punctuation">(</span>category<span class="token punctuation">.</span><span class="token function">getParentId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printCategory</span><span class="token punctuation">(</span>parent<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>正常情况下，这段代码是没有问题的。但如果某次有人误操作，把某个分类的parentId指向了它自己，这样就会出现无限递归的情况。导致接口一直不能返回数据，最终会发生堆栈溢出。</p>
@@ -602,17 +626,17 @@ public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
 <li>有些功能可以非事务执行;</li>
 <li>有些功能可以异步处理</li>
 </ul>
-<p>关于大事务问题，若想深度了解请点击<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&amp;mid=2247490259&amp;idx=1&amp;sn=1dd11c5f49103ca303a61fc82ce406e0&amp;chksm=c0ebc23bf79c4b2db58b28ef752560bd91a1932ceb6713c9b19b821db0f29e1c58275d334076&amp;token=2041133408&amp;lang=zh_CN&amp;scene=21#wechat_redirect">这里</a>进一步了解。</p>
+<p>关于大事务问题，若想深度了解请点击<a href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&mid=2247490259&idx=1&sn=1dd11c5f49103ca303a61fc82ce406e0&chksm=c0ebc23bf79c4b2db58b28ef752560bd91a1932ceb6713c9b19b821db0f29e1c58275d334076&token=2041133408&lang=zh_CN&scene=21#wechat_redirect" target="_blank" rel="noopener">这里</a>进一步了解。</p>
 <h4 id="8、锁粒度"><a href="#8、锁粒度" class="headerlink" title="8、锁粒度"></a>8、锁粒度</h4><p>在某些业务场景中，为了防止多个线程修改某个共享数据，造成数据异常。为了解决并发场景下，多个线程同时修改数据，造成数据不一致的情况。通常情况下，我们会：<code>加锁</code>。但如果锁加得不好，导致锁得粒度太粗，也会非常影响接口性能。</p>
 <h5 id="8-1-synchronized"><a href="#8-1-synchronized" class="headerlink" title="8.1 synchronized"></a>8.1 synchronized</h5><p>在java中提供了<code>synchronized</code>关键字给我们的代码加锁。通常有两种写法，在<code>方法上加锁</code>和<code>在代码块上加锁</code>。<br>先看看如何在方法上加锁：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token function">doSave</span><span class="token punctuation">(</span><span class="token class-name">String</span> fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token function">doSave</span><span class="token punctuation">(</span>String fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">mkdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">uploadFile</span><span class="token punctuation">(</span>fileUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">sendMessage</span><span class="token punctuation">(</span>fileUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里加锁的目的是为了防止并发的情况，创建了相同的目录，第二次会创建失败，影响业务功能。但这种直接在方法上加锁，锁的粒度有点粗。因为doSave方法中的上传文件和发消息方法，是不需要加锁的，只有创建目录方法，才需要加锁。</p>
 <p>我们都知道文件上传操作是非常耗时的，如果将整个方法加锁，那么需要等到整个方法执行完之后才能释放锁。显然，这会导致该方法的性能很差，变得得不偿失。<br>这时，我们可以改成在代码块上加锁了，具体代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSave</span><span class="token punctuation">(</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">String</span> fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSave</span><span class="token punctuation">(</span>String path<span class="token punctuation">,</span>String fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">synchronized</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">exists</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
           <span class="token function">mkdir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -627,9 +651,9 @@ public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
 <p>由于zookeeper分布式锁的性能不太好，真实业务场景用的不多，这里先不讲。</p>
 <p>下面聊一下redis分布式锁。</p>
 <h5 id="8-2-redis分布式锁"><a href="#8-2-redis分布式锁" class="headerlink" title="8.2 redis分布式锁"></a>8.2 redis分布式锁</h5><p>在分布式系统中，由于redis分布式锁相对于更简单和高效，成为了分布式锁的首先，被我们用到了很多实际业务场景当中。使用redis分布式锁的伪代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSave</span><span class="token punctuation">(</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">String</span> fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSave</span><span class="token punctuation">(</span>String path<span class="token punctuation">,</span>String fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token class-name">String</span> result <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>lockKey<span class="token punctuation">,</span> requestId<span class="token punctuation">,</span> <span class="token string">"NX"</span><span class="token punctuation">,</span> <span class="token string">"PX"</span><span class="token punctuation">,</span> expireTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    String result <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>lockKey<span class="token punctuation">,</span> requestId<span class="token punctuation">,</span> <span class="token string">"NX"</span><span class="token punctuation">,</span> <span class="token string">"PX"</span><span class="token punctuation">,</span> expireTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">"OK"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">exists</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
          <span class="token function">mkdir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -644,7 +668,7 @@ public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
   <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>跟之前使用<code>synchronized</code>关键字加锁时一样，这里锁的范围也太大了，换句话说就是锁的粒度太粗，这样会导致整个方法的执行效率很低。其实只有创建目录的时候，才需要加分布式锁，其余代码根本不用加锁。于是，我们需要优化一下代码：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSave</span><span class="token punctuation">(</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">String</span> fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doSave</span><span class="token punctuation">(</span>String path<span class="token punctuation">,</span>String fileUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tryLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token function">mkdir</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
@@ -653,7 +677,7 @@ public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
 <span class="token punctuation">}</span>
 <span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">tryLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token class-name">String</span> result <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>lockKey<span class="token punctuation">,</span> requestId<span class="token punctuation">,</span> <span class="token string">"NX"</span><span class="token punctuation">,</span> <span class="token string">"PX"</span><span class="token punctuation">,</span> expireTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    String result <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>lockKey<span class="token punctuation">,</span> requestId<span class="token punctuation">,</span> <span class="token string">"NX"</span><span class="token punctuation">,</span> <span class="token string">"PX"</span><span class="token punctuation">,</span> expireTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">"OK"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -663,61 +687,61 @@ public List&lt;User&gt; queryUser(List&lt;User&gt; searchList) {
   <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上面代码将加锁的范围缩小了，只有创建目录时才加了锁。这样看似简单的优化之后，接口性能能提升很多。说不定，会有意外的惊喜喔。哈哈哈。</p>
-<p>redis分布式锁虽说好用，但它在使用时，有很多注意的细节，隐藏了很多坑，如果稍不注意很容易踩中。详细内容可以<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&amp;mid=2247490430&amp;idx=1&amp;sn=a1f42f9a981a8f161941a6472f317b10&amp;chksm=c0ebc396f79c4a801a330917ca700e7d7a6af3a3c2c5a4e11a05770da925de8aa9ed3c277737&amp;token=2041133408&amp;lang=zh_CN&amp;scene=21#wechat_redirect">点击这里</a>进一步了解。</p>
+<p>redis分布式锁虽说好用，但它在使用时，有很多注意的细节，隐藏了很多坑，如果稍不注意很容易踩中。详细内容可以<a href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&mid=2247490430&idx=1&sn=a1f42f9a981a8f161941a6472f317b10&chksm=c0ebc396f79c4a801a330917ca700e7d7a6af3a3c2c5a4e11a05770da925de8aa9ed3c277737&token=2041133408&lang=zh_CN&scene=21#wechat_redirect" target="_blank" rel="noopener">点击这里</a>进一步了解。</p>
 <h5 id="8-3-数据库分布式锁"><a href="#8-3-数据库分布式锁" class="headerlink" title="8.3  数据库分布式锁"></a>8.3  数据库分布式锁</h5><p>mysql数据库中主要有三种锁：</p>
 <blockquote>
 <p>表锁：加锁快，不会出现死锁。但锁定粒度大，发生锁冲突的概率最高，并发度最低。<br>行锁：加锁慢，会出现死锁。但锁定粒度最小，发生锁冲突的概率最低，并发度也最高。<br>间隙锁：开销和加锁时间界于表锁和行锁之间。它会出现死锁，锁定粒度界于表锁和行锁之间，并发度一般。</p>
 </blockquote>
 <p>并发度越高，意味着接口性能越好。所以数据库锁的优化方向是：优先使用行锁，其次使用间隙锁，再其次使用表锁。</p>
 <h4 id="9、分页处理"><a href="#9、分页处理" class="headerlink" title="9、分页处理"></a>9、分页处理</h4><p>有时候我会调用某个接口批量查询数据，比如：通过用户id批量查询出用户信息，然后给这些用户送积分。但如果你一次性查询的用户数量太多了，比如一次查询2000个用户的数据。参数中传入了2000个用户的id，远程调用接口，会发现该用户查询接口经常超时。<br>调用代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">&gt;</span></span> users <span class="token operator">=</span> <span class="token function">remoteCallUser</span><span class="token punctuation">(</span>ids<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java"><code class="language-java">List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> <span class="token function">remoteCallUser</span><span class="token punctuation">(</span>ids<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>众所周知，调用接口从数据库获取数据，是需要经过网络传输的。如果数据量太大，无论是获取数据的速度，还是网络传输受限于带宽，都会导致耗时时间比较长。</p>
 <p>那么，这种情况要如何优化呢？<br>答案：分页处理。将一次获取所有的数据的请求，改成分成多次获取，每次只回去一部分用户的数据，最后进行合并和汇总。其实，处理这个问题 ，要分为两种场景：<code>同步调用</code>和<code>异步调用</code>。</p>
 <h5 id="9-1-同步调用"><a href="#9-1-同步调用" class="headerlink" title="9.1  同步调用"></a>9.1  同步调用</h5><p>如果在job中需要获取2000个用户的信息，它要求只要能正确获取到数据就好，对获取数据的总耗时要求不太高。但对每个远程接口调用的耗时有要求，不能大于500ms，不然会有邮件预警。这时，我们可以同步分页调用批量查询用户信息接口。<br>具体实例代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Long</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> allIds <span class="token operator">=</span> <span class="token class-name">Lists</span><span class="token punctuation">.</span><span class="token function">partition</span><span class="token punctuation">(</span>ids<span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Long</span><span class="token punctuation">&gt;</span></span> batchIds<span class="token operator">:</span>allIds<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">&gt;</span></span> users <span class="token operator">=</span> <span class="token function">remoteCallUser</span><span class="token punctuation">(</span>batchIds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Long<span class="token operator">>></span> allIds <span class="token operator">=</span> Lists<span class="token punctuation">.</span><span class="token function">partition</span><span class="token punctuation">(</span>ids<span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Long<span class="token operator">></span> batchIds<span class="token operator">:</span>allIds<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> <span class="token function">remoteCallUser</span><span class="token punctuation">(</span>batchIds<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>代码中我用的<code>google</code>的<code>guava</code>工具中的<code>Lists.partition</code>方法，用它来做分页简直太好用了，不然要巴拉巴拉写一大堆分页的代码。</p>
 <h5 id="9-2-异步调用"><a href="#9-2-异步调用" class="headerlink" title="9.2  异步调用"></a>9.2  异步调用</h5><p>如果是在某个接口中需要获取2000个用户信息，它考虑的就需要更多一些。除了需要考虑远程调用接口的耗时之外，还需要考虑该接口本身的总耗时，也不能超过500ms。这时候用上面的同步分页请求远程接口，肯定是行不通的。那么  只能使用<code>异步调用</code>了。具体代码如下所示：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Long</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> allIds <span class="token operator">=</span> <span class="token class-name">Lists</span><span class="token punctuation">.</span><span class="token function">partition</span><span class="token punctuation">(</span>ids<span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">&gt;</span></span> result <span class="token operator">=</span> <span class="token class-name">Lists</span><span class="token punctuation">.</span><span class="token function">newArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-allIds<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>batchIds<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
-   <span class="token class-name">CompletableFuture</span><span class="token punctuation">.</span><span class="token function">supplyAsync</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java">List<span class="token operator">&lt;</span>List<span class="token operator">&lt;</span>Long<span class="token operator">>></span> allIds <span class="token operator">=</span> Lists<span class="token punctuation">.</span><span class="token function">partition</span><span class="token punctuation">(</span>ids<span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">final</span> List<span class="token operator">&lt;</span>User<span class="token operator">></span> result <span class="token operator">=</span> Lists<span class="token punctuation">.</span><span class="token function">newArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+allIds<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>batchIds<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   CompletableFuture<span class="token punctuation">.</span><span class="token function">supplyAsync</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
         result<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token function">remoteCallUser</span><span class="token punctuation">(</span>batchIds<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token class-name">Boolean</span><span class="token punctuation">.</span>TRUE<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> Boolean<span class="token punctuation">.</span>TRUE<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span> executor<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用<code>CompletableFuture</code>类，多个线程异步调用远程接口，最后汇总结果统一返回。</p>
 <h4 id="10、加缓存"><a href="#10、加缓存" class="headerlink" title="10、加缓存"></a>10、加缓存</h4><p>解决接口性能问题，<code>加缓存</code>是一个非常高效的方法。但不能为了缓存而缓存，还是要看具体业务场景。毕竟加了缓存，会导致接口的复杂度增加，它会带来数据不一致问题。在有些并发量比较低的场景中，比如用户下单，可以不加缓存。还有些场景，比如在商城首页显示商品分类的地方，假设这里的分类是调用接口获到的数据，但页面暂时没有做静态化。如果查询分类树的接口没有使用缓存，而直接从数据库查询数据，性能会非常差。那么如何使用缓存呢？</p>
 <h5 id="10-1-redis缓存"><a href="#10-1-redis缓存" class="headerlink" title="10.1 redis缓存"></a>10.1 redis缓存</h5><p>通常情况下，我们使用最多的缓存可能是：<code>redis和memcached</code>。但对于java应用来说，绝大多数都是使用redis，所以接下来我们以redis为例。由于在关系型数据库，比如：mysql中，菜单是有上下级关系的。某个四级分类是某个三级分类的子分类，这个三级分类，又是某个二级分类的子分类，而这个二级分类，又是某个一级分类的子分类。这种存储结构决定了，想一次性查出这个分类树，并非是一件非常容易的事情。这就需要使用程序递归查询了，如果分类多的话，这个递归是比较耗时的。所以，如果每次都直接从数据库中查询分类树的数据，是一个非常耗时的操作。这时我们可以使用缓存，大部分情况，接口都直接从缓存中获取数据。操作redis可以使用成熟的框架，比如：<code>jedis和redisson等</code>。用jedis伪代码如下 ：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> json <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token class-name">StringUtils</span><span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token class-name">CategoryTree</span> categoryTree <span class="token operator">=</span> <span class="token class-name">JsonUtil</span><span class="token punctuation">.</span><span class="token function">toObject</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">String json <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   CategoryTree categoryTree <span class="token operator">=</span> JsonUtil<span class="token punctuation">.</span><span class="token function">toObject</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token keyword">return</span> categoryTree<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">return</span> <span class="token function">queryCategoryTreeFromDb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>先从redis中根据某个key查询是否有菜单数据，如果有则转换成对象，直接返回。如果redis中没有查到菜单数据，则再从数据库中查询菜单数据，有则返回。此外，我们还需要有个job每隔一段时间，从数据库中查询菜单数据，更新到redis当中，这样以后每次都能直接从redis中获取菜单的数据，而无需访问数据库了。<br><img src="https://s2.loli.net/2021/12/28/Chm1p2bSgioWcGf.jpg" alt="使用redis进行数据查询"></p>
 <p>这样改造之后，能快速的提升性能。但这样做性能提升不是最佳的，还有其他的方案，我们一起看看下面的内容。</p>
 <h5 id="10-2-二级缓存"><a href="#10-2-二级缓存" class="headerlink" title="10.2 二级缓存"></a>10.2 二级缓存</h5><p>上面的方案是基于redis缓存的，虽说redis访问速度很快。但毕竟是一个远程调用，而且菜单树的数据很多，在网络传输的过程中，是有些耗时的。有没有办法，不经过请求远程，就能直接获取到数据呢？<br>答：使用<code>二级缓存</code>，即基于内存的缓存。除了自己手写的内存缓存之外，目前使用比较多的内存缓存框架有:<code>guava、Ehcache、caffine</code>等。我们在这里以<code>caffeine</code>为例，他是spring官方推荐的。<br>第一步，引入caffeine的相关jar包。</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-cache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.github.ben-manes.caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.6.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-cache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.github.ben-manes.caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.6.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>第二步、 配置CacheManager，开启EnableCaching</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">@Configuration
+<pre class="line-numbers language-xml"><code class="language-xml">@Configuration
 @EnableCaching
 public class CacheConfig {
     @Bean
     public CacheManager cacheManager(){
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
         //Caffeine配置
-        Caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Object,</span> <span class="token attr-name">Object</span><span class="token punctuation">&gt;</span></span> caffeine = Caffeine.newBuilder()
+        Caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Object,</span> <span class="token attr-name">Object</span><span class="token punctuation">></span></span> caffeine = Caffeine.newBuilder()
                 //最后一次写入后经过固定时间过期
                 .expireAfterWrite(10, TimeUnit.SECONDS)
                 //缓存的最大条数
@@ -727,13 +751,13 @@ public class CacheConfig {
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>第三步，使用Cacheable注解获取数据</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CategoryService</span> <span class="token punctuation">{</span>
    <span class="token annotation punctuation">@Cacheable</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"category"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#categoryKey"</span><span class="token punctuation">)</span>
-   <span class="token keyword">public</span> <span class="token class-name">CategoryModel</span> <span class="token function">getCategory</span><span class="token punctuation">(</span><span class="token class-name">String</span> categoryKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token class-name">String</span> json <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>categoryKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token class-name">StringUtils</span><span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-         <span class="token class-name">CategoryTree</span> categoryTree <span class="token operator">=</span> <span class="token class-name">JsonUtil</span><span class="token punctuation">.</span><span class="token function">toObject</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">public</span> CategoryModel <span class="token function">getCategory</span><span class="token punctuation">(</span>String categoryKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      String json <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>categoryKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         CategoryTree categoryTree <span class="token operator">=</span> JsonUtil<span class="token punctuation">.</span><span class="token function">toObject</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
          <span class="token keyword">return</span> categoryTree<span class="token punctuation">;</span>
       <span class="token punctuation">}</span>
       <span class="token keyword">return</span> <span class="token function">queryCategoryTreeFromDb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -747,25 +771,26 @@ public class CacheConfig {
 <li>一致性hash算法</li>
 </ul>
 <p>分库分表主要有两个方向：<code>垂直</code>和<code>水平</code>。</p>
-<p>说实话垂直方向（即业务方向）更简单。在水平方向（即数据方向）上，分库和分表的作用，其实是有区别的，不能混为一谈。分库：是为了解决数据库连接资源不足问题，和磁盘IO的性能瓶颈问题。分表：是为了解决单表数据量太大，sql语句查询数据时，即使走了索引也非常耗时问题。此外还可以解决消耗cpu资源问题。分库分表：可以解决 数据库连接资源不足、磁盘IO的性能瓶颈、检索数据耗时 和 消耗cpu资源等问题。如果在有些业务场景中，用户并发量很大，但是需要保存的数据量很少，这时可以只分库，不分表。如果在有些业务场景中，用户并发量不大，但是需要保存的数量很多，这时可以只分表，不分库。如果在有些业务场景中，用户并发量大，并且需要保存的数量也很多时，可以分库分表。关于分库分表更详细的内容，请点击<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&amp;mid=2247490459&amp;idx=1&amp;sn=1e4296228c00aa4203aab481575ac916&amp;chksm=c0ebc373f79c4a658de7ce7f0d8cf30b1f45adb346c2386321779e7cf85a757a12337d3ae233&amp;token=2041133408&amp;lang=zh_CN&amp;scene=21#wechat_redirect">这里</a>。</p>
+<p>说实话垂直方向（即业务方向）更简单。在水平方向（即数据方向）上，分库和分表的作用，其实是有区别的，不能混为一谈。分库：是为了解决数据库连接资源不足问题，和磁盘IO的性能瓶颈问题。分表：是为了解决单表数据量太大，sql语句查询数据时，即使走了索引也非常耗时问题。此外还可以解决消耗cpu资源问题。分库分表：可以解决 数据库连接资源不足、磁盘IO的性能瓶颈、检索数据耗时 和 消耗cpu资源等问题。如果在有些业务场景中，用户并发量很大，但是需要保存的数据量很少，这时可以只分库，不分表。如果在有些业务场景中，用户并发量不大，但是需要保存的数量很多，这时可以只分表，不分库。如果在有些业务场景中，用户并发量大，并且需要保存的数量也很多时，可以分库分表。关于分库分表更详细的内容，请点击<a href="https://mp.weixin.qq.com/s?__biz=MzkwNjMwMTgzMQ==&mid=2247490459&idx=1&sn=1e4296228c00aa4203aab481575ac916&chksm=c0ebc373f79c4a658de7ce7f0d8cf30b1f45adb346c2386321779e7cf85a757a12337d3ae233&token=2041133408&lang=zh_CN&scene=21#wechat_redirect" target="_blank" rel="noopener">这里</a>。</p>
 <h4 id="12、辅助功能"><a href="#12、辅助功能" class="headerlink" title="12、辅助功能"></a>12、辅助功能</h4><p>优化接口性能问题，除了上面提到的这些常用方法之外，还需要配合使用一些辅助功能，因为它们真的可以帮我们提升查找问题的效率。</p>
 <h5 id="12-1-开启慢查询日志"><a href="#12-1-开启慢查询日志" class="headerlink" title="12.1 开启慢查询日志"></a>12.1 开启慢查询日志</h5><p>通常情况下，为了定位sql的性能瓶颈，我们需要开启mysql的慢查询日志。把超过指定时间的sql语句，单独记录下来，方面以后分析和定位问题。<br>开启慢查询日志需要重点关注三个参数：</p>
 <ul>
-<li><code>slow_query_log </code> 慢查询开关</li>
+<li><code>slow_query_log</code> 慢查询开关</li>
 <li><code>slow_query_log_file</code> 慢查询日志存放的路径</li>
 <li><code>long_query_time</code> 超过多少秒才会记录日志</li>
 </ul>
-<p>通过mysql的set命令可以设置：<br>   </p><pre class="line-numbers language-Mysql" data-language="Mysql"><code class="language-Mysql">set global slow_query_log='ON';
-set global slow_query_log_file='/usr/local/mysql/data/slow.log';
-set global long_query_time=2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><br>设置完之后，如果某条sql的执行时间超过了2秒，会被自动记录到slow.log文件中。<p></p>
+<p>通过mysql的set命令可以设置：</p>
+<pre class="line-numbers language-Mysql"><code class="language-Mysql">   set global slow_query_log='ON';
+   set global slow_query_log_file='/usr/local/mysql/data/slow.log';
+   set global long_query_time=2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>设置完之后，如果某条sql的执行时间超过了2秒，会被自动记录到slow.log文件中。</p>
 <p>当然也可以直接修改配置文件 <code>my.cnf</code></p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[mysqld]
+<pre class="line-numbers language-mysql"><code class="language-mysql">[mysqld]
 slow_query_log = ON
 slow_query_log_file = /usr/local/mysql/data/slow.log
 long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>但这种方式需要重启mysql服务。<br>很多公司每天早上都会发一封慢查询日志的邮件，开发人员根据这些信息优化<code>sql</code>。</p>
-<h5 id="12-2-加监控"><a href="#12-2-加监控" class="headerlink" title="12.2 加监控"></a>12.2 加监控</h5><p>为了出现sql问题时，能够让我们及时发现，我们需要对系统做<code>监控</code>。目前业界使用比较多的开源监控系统是：<a target="_blank" rel="noopener" href="https://prometheus.io/"><code>Prometheus</code></a>。<br>它提供了 <code>监控</code> 和 <code>预警</code> 的功能。<br>架构图如下：<br><img src="https://s2.loli.net/2021/12/24/qOXwLDNm1ai32kC.jpg" alt="Prometheus架构图"><br>我们可以用它监控如下信息：</p>
+<h5 id="12-2-加监控"><a href="#12-2-加监控" class="headerlink" title="12.2 加监控"></a>12.2 加监控</h5><p>为了出现sql问题时，能够让我们及时发现，我们需要对系统做<code>监控</code>。目前业界使用比较多的开源监控系统是：<a href="https://prometheus.io/" target="_blank" rel="noopener"><code>Prometheus</code></a>。<br>它提供了 <code>监控</code> 和 <code>预警</code> 的功能。<br>架构图如下：<br><img src="https://s2.loli.net/2021/12/24/qOXwLDNm1ai32kC.jpg" alt="Prometheus架构图"><br>我们可以用它监控如下信息：</p>
 <ul>
 <li>接口响应时间</li>
 <li>调用第三方服务耗时</li>
@@ -776,103 +801,20 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <li>数据库使用情况</li>
 </ul>
 <p>等等…<br>它的界面大概长这样子：<br><img src="https://s2.loli.net/2021/12/28/j4CcUbAW6euIg9y.jpg" alt="Prometheus架构图界面"><br>可以看到mysql当前qps，活跃线程数，连接数，缓存池的大小等信息。如果发现数据量连接池占用太多，对接口的性能肯定会有影响。这时可能是代码中开启了连接忘了关，或者并发量太大了导致的，需要做进一步排查和系统优化。</p>
-<h5 id="12-3-链路跟踪"><a href="#12-3-链路跟踪" class="headerlink" title="12.3 链路跟踪"></a>12.3 链路跟踪</h5><p>有时候某个接口涉及的逻辑很多，比如：查数据库、查redis、远程调用接口，发mq消息，执行业务代码等等。该接口一次请求的链路很长，如果逐一排查，需要花费大量的时间，这时候，我们已经没法用传统的办法定位问题了。有没有办法解决这问题呢？用分布式链路跟踪系统：<a target="_blank" rel="noopener" href="https://skywalking.apache.org/">skywalking</a>。架构图如下：<br><img src="https://s2.loli.net/2021/12/28/TawLnpS7uvrUoCJ.png" alt="skywalking架构图"><br>通过skywalking定位性能问题：<br>在skywalking中可以通过traceId（全局唯一的id），串联一个接口请求的完整链路。可以看到整个接口的耗时，调用的远程服务的耗时，访问数据库或者redis的耗时等等，功能非常强大。之前没有这个功能的时候，为了定位线上接口性能问题，我们还需要在代码中加日志，手动打印出链路中各个环节的耗时情况，然后再逐一排查。如果你用过skywalking排查接口性能问题，不自觉的会爱上它的。</p>
+<h5 id="12-3-链路跟踪"><a href="#12-3-链路跟踪" class="headerlink" title="12.3 链路跟踪"></a>12.3 链路跟踪</h5><p>有时候某个接口涉及的逻辑很多，比如：查数据库、查redis、远程调用接口，发mq消息，执行业务代码等等。该接口一次请求的链路很长，如果逐一排查，需要花费大量的时间，这时候，我们已经没法用传统的办法定位问题了。有没有办法解决这问题呢？用分布式链路跟踪系统：<a href="https://skywalking.apache.org/" target="_blank" rel="noopener">skywalking</a>。架构图如下：<br><img src="https://s2.loli.net/2021/12/28/TawLnpS7uvrUoCJ.png" alt="skywalking架构图"><br>通过skywalking定位性能问题：<br>在skywalking中可以通过traceId（全局唯一的id），串联一个接口请求的完整链路。可以看到整个接口的耗时，调用的远程服务的耗时，访问数据库或者redis的耗时等等，功能非常强大。之前没有这个功能的时候，为了定位线上接口性能问题，我们还需要在代码中加日志，手动打印出链路中各个环节的耗时情况，然后再逐一排查。如果你用过skywalking排查接口性能问题，不自觉的会爱上它的。</p>
 
-                
             </div>
-            <hr/>
+            <hr />
 
             
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">沙九</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="http://shajiu.com/2021/12/24/gao-ding-jie-kou-xing-neng/">http://shajiu.com/2021/12/24/gao-ding-jie-kou-xing-neng/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">沙九</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/">
-                                    <span class="chip bg-color">个人提升</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-                <style>
+            <style>
     #reward {
         margin: 40px 0;
         text-align: center;
     }
 
     #reward .reward-link {
-        font-size: 1.4rem;
-        line-height: 38px;
+        font-size: 1.88rem;
     }
 
     #reward .btn-floating:hover {
@@ -958,13 +900,13 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
 </style>
 
 <div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
 
     <!-- Modal Structure -->
     <div id="rewardModal" class="modal">
         <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -988,19 +930,85 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
         $('.tabs').tabs();
     });
 </script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《搞定接口性能》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/12/24/gao-ding-jie-kou-xing-neng/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                沙九
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
         </div>
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
 
-    
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
 
-    
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '查教程获取',
+        clientSecret: '查教程获取',
+        repo: 'Shajiu.github.io',
+        owner: 'shajiu',
+        admin: "Shajiu",
+        id: '2021/12/24/gao-ding-jie-kou-xing-neng/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-    
-
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -1018,13 +1026,13 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2022/01/05/ru-he-ai-zhi-zao-cheng-xu-yuan-yu-xian-nu-wu-dao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="如何AI制造程序猿与仙女舞蹈？">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="如何AI制造程序猿与仙女舞蹈？">
                         
                         <span class="card-title">如何AI制造程序猿与仙女舞蹈？</span>
                     </div>
@@ -1033,16 +1041,14 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
                     <div class="summary block-with-text">
                         
                             
+引言&emsp;&emsp;前不久写了一份个人的年终总结，题为《中国特色、民族风格、青年气派的年终总结》，全文共有10240个字符。获得了不少人的关注，同时也得到了很多朋友们的建设性的意见。有的人说制作词云更需要突出核心词；有的人说写的篇
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-05
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-01-05
                         </span>
                         <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            沙九
                             
                         </span>
                     </div>
@@ -1054,14 +1060,14 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/12/24/mo-xing-bu-shu-de-zhu-yao-ji-zhu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="模型部署的主要技术">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="模型部署的主要技术">
                         
                         <span class="card-title">模型部署的主要技术</span>
                     </div>
@@ -1069,18 +1075,19 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在已有一个模型之后，怎么在线部署成为服务。
+模型部署的背景当我们已经进行了一次模型训练，得到一个心仪的模型后，如果部署成服务，通俗的说，就是让这个模型让需要的人随时能使用。通俗的说，服务或者我们所谓的上线，可以理解为打包了一个商品把它放到货
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-12-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%91%A8%E6%80%BB%E7%BB%93/" class="post-category">
+                            <a href="/categories/周总结/" class="post-category" target="_blank">
                                     周总结
                                 </a>
                             
@@ -1091,7 +1098,7 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/">
+                    <a href="/tags/个人提升/" target="_blank">
                         <span class="chip bg-color">个人提升</span>
                     </a>
                     
@@ -1102,39 +1109,50 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
         
     </div>
 </article>
-
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
 
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
 
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
 
-  <!-- 是否加载使用自带的 prismjs. -->
-  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
 
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 沙九的博客<br />'
+            + '作者: 沙九<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1144,7 +1162,7 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
 
 <div id="floating-toc-btn" class="hide-on-med-and-down">
     <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
+        <i class="fa fa-list"></i>
     </a>
 </div>
 
@@ -1156,8 +1174,21 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
         });
 
         // Set scroll toc fixed.
@@ -1200,10 +1231,10 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
         let $mainContent = $('#main-content');
         $('#floating-toc-btn .btn-floating').click(function () {
             if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
+                $tocAside.removeClass(expandedClass).slideUp(500);
                 $mainContent.removeClass('l9');
             } else {
-                $tocAside.addClass(expandedClass).show();
+                $tocAside.addClass(expandedClass).slideDown(500);
                 $mainContent.addClass('l9');
             }
             fixPostCardWidth('artDetail', 'prenext-posts');
@@ -1211,153 +1242,161 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
         
     });
 </script>
-
     
 
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 
 
     <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="/libs/aplayer/Meting.min.js"></script>
-
-    
-
-    <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+    <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2019-2022</span>
-            
-            <a href="/about" target="_blank">沙九</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
-            
-            
-            
-                
-            
-            
-                <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
-            
-            <br>
+            &copy; 2021起 沙九. 版权所有
 
-            <!-- 运行天数提醒. -->
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">48.8k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
             
             <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/Shajiu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
+    <a href="https://github.com/shajiu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
     </a>
 
 
 
     <a href="mailto:18810979033@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
+        <i class="fa fa-envelope-open"></i>
     </a>
 
 
 
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2495957419" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2495957419" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
+    <a href="https://zhihu.com/people/shajiu" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
     </a>
 
 
 
-    <a href="https://shajiu.github.io" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://shajiu.github.io" data-position="top" data-delay="50">
-        <i class="fab fa-weibo"></i>
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=792321264&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
     </a>
 
 
+
+    <a href="https://weibo.com/shajiu" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
-
 </div>
     </div>
 </footer>
 
 <div class="progress-bar"></div>
 
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2021, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
             <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
@@ -1365,102 +1404,16 @@ long_query_time = 2<span aria-hidden="true" class="line-numbers-rows"><span></sp
     </div>
 </div>
 
+<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    };
-
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fa fa-angle-up"></i>
     </a>
 </div>
 
@@ -1472,61 +1425,33 @@ $(function () {
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
-    
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
 
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <!-- 雪花特效 -->
-    
-
-    <!-- 鼠标星星特效 -->
-    
-
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
-    
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=查教程获取"></script>
 <script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '查教程获取');
 </script>
 
+
+
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="/libs/others/clicklove.js"></script>
     
+
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
-    
-
-    
-
-    <!--腾讯兔小巢-->
-    
-    
-
-    
-
-    
-
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <!-- 雪花特效 -->
     
 
 </body>

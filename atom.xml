@@ -3,10 +3,10 @@
   <title>沙九的博客</title>
   
   <subtitle>甘南第一勇士</subtitle>
-  <link href="http://shajiu.com/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="http://shajiu.com/"/>
-  <updated>2022-07-10T06:08:45.039Z</updated>
+  <updated>2022-03-19T14:43:42.433Z</updated>
   <id>http://shajiu.com/</id>
   
   <author>
@@ -14,51 +14,31 @@
     
   </author>
   
-  <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://shajiu.com/2022/07/10/hello-world/"/>
-    <id>http://shajiu.com/2022/07/10/hello-world/</id>
-    <published>2022-07-10T06:08:45.039Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
+  <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
     <title>利用Python绘制桑基图</title>
     <link href="http://shajiu.com/2022/03/19/li-yong-python-hui-zhi-sang-ji-tu/"/>
     <id>http://shajiu.com/2022/03/19/li-yong-python-hui-zhi-sang-ji-tu/</id>
     <published>2022-03-19T14:02:35.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-03-19T14:43:42.433Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;利用Python绘制桑基图&quot;&gt;&lt;a href=&quot;#利用Python绘制桑基图&quot; class=&quot;headerlink&quot; title=&quot;利用Python绘制桑基图&quot;&gt;&lt;/a&gt;利用Python绘制桑基图&lt;/h3&gt;&lt;p&gt;&amp;amp;emsp; 桑基图(Sankey</summary>
+          &lt;h3 id=&quot;利用Python绘制桑基图&quot;&gt;&lt;a href=&quot;#利用Python绘制桑基图&quot; class=&quot;headerlink&quot; title=&quot;利用Python绘制桑基图&quot;&gt;&lt;/a&gt;利用Python绘制桑基图&lt;/h3&gt;&lt;p&gt;&amp;emsp; 桑基图(Sankey
         
       
     
+    </summary>
+    
+      <category term="个人提升" scheme="http://shajiu.com/categories/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
     
-    <category term="个人提升" scheme="http://shajiu.com/categories/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
+      <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
@@ -67,24 +47,25 @@
     <link href="http://shajiu.com/2022/03/11/yong-python-shi-xian-de-shi-da-jing-dian-pai-xu-suan-fa/"/>
     <id>http://shajiu.com/2022/03/11/yong-python-shi-xian-de-shi-da-jing-dian-pai-xu-suan-fa/</id>
     <published>2022-03-11T08:33:06.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-03-11T08:53:28.087Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;p&gt;用Python实现的十大经典排序算法&lt;/p&gt;
-&lt;h3 id=&quot;冒泡排序&quot;&gt;&lt;a href=&quot;#冒泡排序&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序&quot;&gt;&lt;/a&gt;冒泡排序&lt;/h3&gt;&lt;p&gt;冒泡排序（Bubble</summary>
+          &lt;p&gt;用Python实现的十大经典排序算法&lt;/p&gt;
+&lt;h3 id=&quot;冒泡排序&quot;&gt;&lt;a href=&quot;#冒泡排序&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序&quot;&gt;&lt;/a&gt;冒泡排序&lt;/h3&gt;&lt;p&gt;冒泡排序（Bubble
         
       
     
+    </summary>
+    
+      <category term="个人提升" scheme="http://shajiu.com/categories/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
     
-    <category term="个人提升" scheme="http://shajiu.com/categories/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
+      <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
@@ -93,23 +74,24 @@
     <link href="http://shajiu.com/2022/02/26/python-zhong-de-guan-jian-han-shu-hui-zong/"/>
     <id>http://shajiu.com/2022/02/26/python-zhong-de-guan-jian-han-shu-hui-zong/</id>
     <published>2022-02-26T03:05:52.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-02-26T06:34:39.449Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;Python中的关键函数汇总&quot;&gt;&lt;a href=&quot;#Python中的关键函数汇总&quot; class=&quot;headerlink&quot;</summary>
+          &lt;h4 id=&quot;Python中的关键函数汇总&quot;&gt;&lt;a href=&quot;#Python中的关键函数汇总&quot; class=&quot;headerlink&quot;
         
       
     
+    </summary>
+    
+      <category term="语言" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80/"/>
     
     
-    <category term="语言" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+      <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
     
   </entry>
   
@@ -118,23 +100,24 @@
     <link href="http://shajiu.com/2022/02/17/java-dai-ma-ming-ming-ji-qiao/"/>
     <id>http://shajiu.com/2022/02/17/java-dai-ma-ming-ming-ji-qiao/</id>
     <published>2022-02-17T09:16:08.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-02-21T02:23:25.933Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;优雅整洁的-Java-代码命名技巧&quot;&gt;&lt;a href=&quot;#优雅整洁的-Java-代码命名技巧&quot; class=&quot;headerlink&quot; title=&quot;优雅整洁的 Java 代码命名技巧&quot;&gt;&lt;/a&gt;优雅整洁的 Java</summary>
+          &lt;h3 id=&quot;优雅整洁的-Java-代码命名技巧&quot;&gt;&lt;a href=&quot;#优雅整洁的-Java-代码命名技巧&quot; class=&quot;headerlink&quot; title=&quot;优雅整洁的 Java 代码命名技巧&quot;&gt;&lt;/a&gt;优雅整洁的 Java
         
       
     
+    </summary>
+    
+      <category term="语言" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80/"/>
     
     
-    <category term="语言" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+      <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
     
   </entry>
   
@@ -143,23 +126,24 @@
     <link href="http://shajiu.com/2022/01/28/cang-yu-shou-xie-zi-mu-yu-pyqt-de-peng-zhuang-ji-yu-pytorch-kuang-jia-lenet-5-wang-luo-de-tu-xing-hua-cang-wen-shou-xie-zi-mu-shi-bie-xi-tong-so-easy/"/>
     <id>http://shajiu.com/2022/01/28/cang-yu-shou-xie-zi-mu-yu-pyqt-de-peng-zhuang-ji-yu-pytorch-kuang-jia-lenet-5-wang-luo-de-tu-xing-hua-cang-wen-shou-xie-zi-mu-shi-bie-xi-tong-so-easy/</id>
     <published>2022-01-28T12:54:28.000Z</published>
-    <updated>2022-07-10T10:04:54.587Z</updated>
+    <updated>2022-01-28T12:57:43.223Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;&gt;&lt;a href=&quot;#藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;</summary>
+          &lt;h4 id=&quot;藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;&gt;&lt;a href=&quot;#藏语手写字母与PyQt的碰撞，基于PyTorch框架LeNet-5网络的图形化藏文手写字母识别系统So-Easy&quot;
         
       
     
+    </summary>
+    
+      <category term="CV" scheme="http://shajiu.com/categories/CV/"/>
     
     
-    <category term="CV" scheme="http://shajiu.com/categories/CV/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+      <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
     
   </entry>
   
@@ -168,23 +152,24 @@
     <link href="http://shajiu.com/2022/01/15/matplotlib-hui-zhi-jing-li-de-logo/"/>
     <id>http://shajiu.com/2022/01/15/matplotlib-hui-zhi-jing-li-de-logo/</id>
     <published>2022-01-15T08:31:32.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-01-15T08:39:56.551Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;背景介绍&quot;&gt;&lt;a href=&quot;#背景介绍&quot; class=&quot;headerlink&quot; title=&quot;背景介绍&quot;&gt;&lt;/a&gt;背景介绍&lt;/h4&gt;&lt;p&gt;&amp;amp;emsp;Matplotlib</summary>
+          &lt;h4 id=&quot;背景介绍&quot;&gt;&lt;a href=&quot;#背景介绍&quot; class=&quot;headerlink&quot; title=&quot;背景介绍&quot;&gt;&lt;/a&gt;背景介绍&lt;/h4&gt;&lt;p&gt;&amp;emsp;Matplotlib
         
       
     
+    </summary>
+    
+      <category term="工具收录" scheme="http://shajiu.com/categories/%E5%B7%A5%E5%85%B7%E6%94%B6%E5%BD%95/"/>
     
     
-    <category term="工具收录" scheme="http://shajiu.com/categories/%E5%B7%A5%E5%85%B7%E6%94%B6%E5%BD%95/"/>
-    
-    
-    <category term="利器库" scheme="http://shajiu.com/tags/%E5%88%A9%E5%99%A8%E5%BA%93/"/>
+      <category term="利器库" scheme="http://shajiu.com/tags/%E5%88%A9%E5%99%A8%E5%BA%93/"/>
     
   </entry>
   
@@ -193,24 +178,25 @@
     <link href="http://shajiu.com/2022/01/15/ma-chu-zui-kuai-de-mei-nu-su-miao-tu-xiang/"/>
     <id>http://shajiu.com/2022/01/15/ma-chu-zui-kuai-de-mei-nu-su-miao-tu-xiang/</id>
     <published>2022-01-15T07:34:28.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-01-15T08:06:07.171Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h4&gt;&lt;p&gt;通过Python将一张精致的美女图像转换为素描图像。&lt;/p&gt;
-&lt;h4 id=&quot;实现步骤&quot;&gt;&lt;a href=&quot;#实现步骤&quot;</summary>
+          &lt;h4 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h4&gt;&lt;p&gt;通过Python将一张精致的美女图像转换为素描图像。&lt;/p&gt;
+&lt;h4 id=&quot;实现步骤&quot;&gt;&lt;a href=&quot;#实现步骤&quot;
         
       
     
+    </summary>
+    
+      <category term="学习记录" scheme="http://shajiu.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="学习记录" scheme="http://shajiu.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="个人生活" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
+      <category term="个人生活" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -219,24 +205,25 @@
     <link href="http://shajiu.com/2022/01/15/yi-xing-dai-ma-bian-ke-gong-xiang-wen-jian/"/>
     <id>http://shajiu.com/2022/01/15/yi-xing-dai-ma-bian-ke-gong-xiang-wen-jian/</id>
     <published>2022-01-15T06:47:23.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-01-15T07:03:33.350Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&amp;amp;emsp;我们想要在局域网内共享一些文件，一般的实现方式是配置共享目录或者搭建一个文件服务器。但是无论哪种方式都是挺麻烦的。&lt;/p&gt;
-&lt;h5 id=&quot;共享文件&quot;&gt;&lt;a href=&quot;#共享文件&quot; class=&quot;headerlink&quot;</summary>
+          &lt;p&gt;&amp;emsp;我们想要在局域网内共享一些文件，一般的实现方式是配置共享目录或者搭建一个文件服务器。但是无论哪种方式都是挺麻烦的。&lt;/p&gt;
+&lt;h5 id=&quot;共享文件&quot;&gt;&lt;a href=&quot;#共享文件&quot; class=&quot;headerlink&quot;
         
       
     
+    </summary>
+    
+      <category term="学习记录" scheme="http://shajiu.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="学习记录" scheme="http://shajiu.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="个人生活" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
+      <category term="个人生活" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -245,23 +232,24 @@
     <link href="http://shajiu.com/2022/01/09/cheng-xu-kai-fa-ren-yuan-que-fa-jing-yan-de-7-chong-biao-xian/"/>
     <id>http://shajiu.com/2022/01/09/cheng-xu-kai-fa-ren-yuan-que-fa-jing-yan-de-7-chong-biao-xian/</id>
     <published>2022-01-09T03:32:03.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-01-10T12:22:55.460Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&amp;amp;emsp;软件行业的工作经验和你从事这个行业的工作年限直接相关。这句话在某种程度上是对的，但是你从事这项工作的年限，并不一定代表你获得了相同年限的工作经验，正如一句话所说：“我们以为我们是工作了十年，其实却只有一年的工作经验，只不过又重复用了九年”。&lt;br&gt;&amp;am</summary>
+          &lt;p&gt;&amp;emsp;软件行业的工作经验和你从事这个行业的工作年限直接相关。这句话在某种程度上是对的，但是你从事这项工作的年限，并不一定代表你获得了相同年限的工作经验，正如一句话所说：“我们以为我们是工作了十年，其实却只有一年的工作经验，只不过又重复用了九年”。&lt;br&gt;&amp;emsp;有
         
       
     
+    </summary>
+    
+      <category term="个人提升" scheme="http://shajiu.com/categories/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
     
-    <category term="个人提升" scheme="http://shajiu.com/categories/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
+      <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
@@ -270,23 +258,24 @@
     <link href="http://shajiu.com/2022/01/08/yong-python-zhi-zuo-yi-chong-qing-liang-ji-de-lu-pin-gong-ju/"/>
     <id>http://shajiu.com/2022/01/08/yong-python-zhi-zuo-yi-chong-qing-liang-ji-de-lu-pin-gong-ju/</id>
     <published>2022-01-08T03:23:44.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-01-08T05:08:54.138Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;背景介绍&quot;&gt;&lt;a href=&quot;#背景介绍&quot; class=&quot;headerlink&quot; title=&quot;背景介绍&quot;&gt;&lt;/a&gt;背景介绍&lt;/h3&gt;&lt;p&gt;&amp;amp;emsp;</summary>
+          &lt;h3 id=&quot;背景介绍&quot;&gt;&lt;a href=&quot;#背景介绍&quot; class=&quot;headerlink&quot; title=&quot;背景介绍&quot;&gt;&lt;/a&gt;背景介绍&lt;/h3&gt;&lt;p&gt;&amp;emsp;
         
       
     
+    </summary>
+    
+      <category term="工具方法" scheme="http://shajiu.com/categories/%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/"/>
     
     
-    <category term="工具方法" scheme="http://shajiu.com/categories/%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/"/>
-    
-    
-    <category term="利器库" scheme="http://shajiu.com/tags/%E5%88%A9%E5%99%A8%E5%BA%93/"/>
+      <category term="利器库" scheme="http://shajiu.com/tags/%E5%88%A9%E5%99%A8%E5%BA%93/"/>
     
   </entry>
   
@@ -295,19 +284,20 @@
     <link href="http://shajiu.com/2022/01/05/ru-he-ai-zhi-zao-cheng-xu-yuan-yu-xian-nu-wu-dao/"/>
     <id>http://shajiu.com/2022/01/05/ru-he-ai-zhi-zao-cheng-xu-yuan-yu-xian-nu-wu-dao/</id>
     <published>2022-01-05T13:03:39.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-01-08T09:10:36.619Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;引言&lt;br&gt;&amp;amp;emsp;&amp;amp;emsp;前不久写了一份个人的年终总结，题为&lt;a</summary>
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;引言&lt;br&gt;&amp;emsp;&amp;emsp;前不久写了一份个人的年终总结，题为&lt;a href=&quot;https://mp.weixin.qq.com/s/4RzLcdPRYKEVWk3hdw3cCQ&quot; target=&quot;_blank&quot;
         
       
     
-    
+    </summary>
     
     
   </entry>
@@ -317,23 +307,24 @@
     <link href="http://shajiu.com/2021/12/24/gao-ding-jie-kou-xing-neng/"/>
     <id>http://shajiu.com/2021/12/24/gao-ding-jie-kou-xing-neng/</id>
     <published>2021-12-24T08:38:25.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2022-01-16T13:29:15.576Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;1、前言&quot;&gt;&lt;a href=&quot;#1、前言&quot; class=&quot;headerlink&quot;</summary>
+          &lt;h4 id=&quot;1、前言&quot;&gt;&lt;a href=&quot;#1、前言&quot; class=&quot;headerlink&quot;
         
       
     
+    </summary>
+    
+      <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
+      <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
@@ -342,24 +333,25 @@
     <link href="http://shajiu.com/2021/12/24/mo-xing-bu-shu-de-zhu-yao-ji-zhu/"/>
     <id>http://shajiu.com/2021/12/24/mo-xing-bu-shu-de-zhu-yao-ji-zhu/</id>
     <published>2021-12-24T01:44:52.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2021-12-28T01:23:16.854Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;p&gt;在已有一个模型之后，怎么在线部署成为服务。&lt;/p&gt;
-&lt;h4 id=&quot;模型部署的背景&quot;&gt;&lt;a href=&quot;#模型部署的背景&quot; class=&quot;headerlink&quot;</summary>
+          &lt;p&gt;在已有一个模型之后，怎么在线部署成为服务。&lt;/p&gt;
+&lt;h4 id=&quot;模型部署的背景&quot;&gt;&lt;a href=&quot;#模型部署的背景&quot; class=&quot;headerlink&quot;
         
       
     
+    </summary>
+    
+      <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
+      <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
@@ -368,26 +360,27 @@
     <link href="http://shajiu.com/2021/12/22/python-jiang-pdf-zhuan-wei-word/"/>
     <id>http://shajiu.com/2021/12/22/python-jiang-pdf-zhuan-wei-word/</id>
     <published>2021-12-22T09:06:45.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2021-12-23T13:51:10.723Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;p&gt;6行代码！用Python将PDF转为word&lt;/p&gt;
+          &lt;p&gt;6行代码！用Python将PDF转为word&lt;/p&gt;
 &lt;p&gt;pdf转word应该算是一个很常见的需求了。网上有些免费的转换工具，一方面不安全，有文件泄露风险，另一方面有免费转换的次数限制。今天向大家分享一个很好用的工具：pdf2docx&lt;/p&gt;
 &lt;p&gt;安装&lt;/p&gt;
-&lt;pre</summary>
+&lt;pre
         
       
     
+    </summary>
+    
+      <category term="工具方法" scheme="http://shajiu.com/categories/%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/"/>
     
     
-    <category term="工具方法" scheme="http://shajiu.com/categories/%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/"/>
-    
-    
-    <category term="利器库" scheme="http://shajiu.com/tags/%E5%88%A9%E5%99%A8%E5%BA%93/"/>
+      <category term="利器库" scheme="http://shajiu.com/tags/%E5%88%A9%E5%99%A8%E5%BA%93/"/>
     
   </entry>
   
@@ -396,23 +389,24 @@
     <link href="http://shajiu.com/2021/12/22/kai-yuan-ruan-jian-cheng-xu-she-ji-jie-kou/"/>
     <id>http://shajiu.com/2021/12/22/kai-yuan-ruan-jian-cheng-xu-she-ji-jie-kou/</id>
     <published>2021-12-22T01:21:48.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2021-12-23T13:55:49.503Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;软件程序接口设计&quot;&gt;&lt;a href=&quot;#软件程序接口设计&quot; class=&quot;headerlink&quot; title=&quot;软件程序接口设计&quot;&gt;&lt;/a&gt;软件程序接口设计&lt;/h3&gt;&lt;h4 id=&quot;重要性&quot;&gt;&lt;a href=&quot;#重要性&quot; class=&quot;headerlink&quot;</summary>
+          &lt;h3 id=&quot;软件程序接口设计&quot;&gt;&lt;a href=&quot;#软件程序接口设计&quot; class=&quot;headerlink&quot; title=&quot;软件程序接口设计&quot;&gt;&lt;/a&gt;软件程序接口设计&lt;/h3&gt;&lt;h4 id=&quot;重要性&quot;&gt;&lt;a href=&quot;#重要性&quot; class=&quot;headerlink&quot;
         
       
     
+    </summary>
+    
+      <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
+      <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
@@ -421,23 +415,24 @@
     <link href="http://shajiu.com/2021/12/17/ji-yu-bert-yu-qing-fen-xi-de-demo-shi-li/"/>
     <id>http://shajiu.com/2021/12/17/ji-yu-bert-yu-qing-fen-xi-de-demo-shi-li/</id>
     <published>2021-12-17T14:44:53.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2021-12-23T13:54:37.984Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;基于BERT舆情分析的Demo实例&quot;&gt;&lt;a href=&quot;#基于BERT舆情分析的Demo实例&quot; class=&quot;headerlink&quot; title=&quot;基于BERT舆情分析的Demo实例&quot;&gt;&lt;/a&gt;基于BERT舆情分析的Demo实例&lt;/h4&gt;&lt;h5</summary>
+          &lt;h4 id=&quot;基于BERT舆情分析的Demo实例&quot;&gt;&lt;a href=&quot;#基于BERT舆情分析的Demo实例&quot; class=&quot;headerlink&quot; title=&quot;基于BERT舆情分析的Demo实例&quot;&gt;&lt;/a&gt;基于BERT舆情分析的Demo实例&lt;/h4&gt;&lt;h5
         
       
     
+    </summary>
+    
+      <category term="周总结(BERT)" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93-BERT/"/>
     
     
-    <category term="周总结(BERT)" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93-BERT/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
+      <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
@@ -446,23 +441,24 @@
     <link href="http://shajiu.com/2021/12/13/guan-yu-liquibase-de-xue-xi-bi-ji/"/>
     <id>http://shajiu.com/2021/12/13/guan-yu-liquibase-de-xue-xi-bi-ji/</id>
     <published>2021-12-13T08:47:01.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2021-12-23T13:53:45.642Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;关于LiquiBase的学习笔记&quot;&gt;&lt;a href=&quot;#关于LiquiBase的学习笔记&quot; class=&quot;headerlink&quot; title=&quot;关于LiquiBase的学习笔记&quot;&gt;&lt;/a&gt;关于LiquiBase的学习笔记&lt;/h3&gt;&lt;p&gt;$\quad$</summary>
+          &lt;h3 id=&quot;关于LiquiBase的学习笔记&quot;&gt;&lt;a href=&quot;#关于LiquiBase的学习笔记&quot; class=&quot;headerlink&quot; title=&quot;关于LiquiBase的学习笔记&quot;&gt;&lt;/a&gt;关于LiquiBase的学习笔记&lt;/h3&gt;&lt;p&gt;$\quad$
         
       
     
+    </summary>
+    
+      <category term="语言(Java)" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80-Java/"/>
     
     
-    <category term="语言(Java)" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80-Java/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+      <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
     
   </entry>
   
@@ -471,23 +467,24 @@
     <link href="http://shajiu.com/2021/12/12/jue-ce-shu/"/>
     <id>http://shajiu.com/2021/12/12/jue-ce-shu/</id>
     <published>2021-12-12T03:30:55.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2021-12-23T13:55:16.959Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;决策树&quot;&gt;&lt;a href=&quot;#决策树&quot; class=&quot;headerlink&quot;</summary>
+          &lt;h2 id=&quot;决策树&quot;&gt;&lt;a href=&quot;#决策树&quot; class=&quot;headerlink&quot;
         
       
     
+    </summary>
+    
+      <category term="算法" scheme="http://shajiu.com/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="算法" scheme="http://shajiu.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+      <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
     
   </entry>
   
@@ -496,24 +493,51 @@
     <link href="http://shajiu.com/2021/12/08/linux-ming-ling-da-quan/"/>
     <id>http://shajiu.com/2021/12/08/linux-ming-ling-da-quan/</id>
     <published>2021-12-08T08:32:03.000Z</published>
-    <updated>2022-07-10T06:08:45.039Z</updated>
+    <updated>2021-12-30T03:22:09.598Z</updated>
     
+    <summary type="html">
     
       
       
         
         
-    <summary type="html">&lt;p&gt;虽然每天都会接触Linux系统, 尤其是使用了Mac之后, 每天都是工作在黑色背景的命令行环境中. 自己记忆力不好, 很多有用的Linux命令不能很好的记忆, 现在逐渐总结一下, 以便后续查看.&lt;/p&gt;
-&lt;h5 id=&quot;Linux关机-重启&quot;&gt;&lt;a</summary>
+          &lt;p&gt;虽然每天都会接触Linux系统, 尤其是使用了Mac之后, 每天都是工作在黑色背景的命令行环境中. 自己记忆力不好, 很多有用的Linux命令不能很好的记忆, 现在逐渐总结一下, 以便后续查看.&lt;/p&gt;
+&lt;h5 id=&quot;Linux关机-重启&quot;&gt;&lt;a
         
       
     
+    </summary>
+    
+      <category term="语言(Linux)" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80-Linux/"/>
     
     
-    <category term="语言(Linux)" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80-Linux/"/>
+      <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>目标检测任务</title>
+    <link href="http://shajiu.com/2021/11/27/mu-biao-jian-ce-ren-wu/"/>
+    <id>http://shajiu.com/2021/11/27/mu-biao-jian-ce-ren-wu/</id>
+    <published>2021-11-27T09:23:27.000Z</published>
+    <updated>2021-12-23T13:56:21.694Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;目标检测任务&quot;&gt;&lt;a href=&quot;#目标检测任务&quot; class=&quot;headerlink&quot; title=&quot;目标检测任务&quot;&gt;&lt;/a&gt;目标检测任务&lt;/h4&gt;&lt;h4 id=&quot;一、PixelLib&quot;&gt;&lt;a href=&quot;#一、PixelLib&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="工具收录" scheme="http://shajiu.com/categories/%E5%B7%A5%E5%85%B7%E6%94%B6%E5%BD%95/"/>
     
     
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+      <category term="利器库" scheme="http://shajiu.com/tags/%E5%88%A9%E5%99%A8%E5%BA%93/"/>
     
   </entry>
   
