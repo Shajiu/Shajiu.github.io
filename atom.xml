@@ -6,7 +6,7 @@
   <link href="http://shajiu.com/atom.xml" rel="self"/>
   
   <link href="http://shajiu.com/"/>
-  <updated>2022-07-09T14:16:52.007Z</updated>
+  <updated>2022-07-16T10:33:49.554Z</updated>
   <id>http://shajiu.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>超详细Hexo+Github绚丽博客搭建小白教程</title>
+    <link href="http://shajiu.com/2022/07/16/chao-xiang-xi-hexo-github-xuan-li-bo-ke-da-jian-xiao-bai-jiao-cheng/"/>
+    <id>http://shajiu.com/2022/07/16/chao-xiang-xi-hexo-github-xuan-li-bo-ke-da-jian-xiao-bai-jiao-cheng/</id>
+    <published>2022-07-16T09:38:16.000Z</published>
+    <updated>2022-07-16T10:33:49.554Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://shajiu.github.io/&quot;&gt;Github 部署演示示例&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一个采用 &lt;code&gt;Material Design&lt;/code&gt; 和响应式设计的 Hexo</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -485,32 +508,6 @@
     
     
     <category term="算法" scheme="http://shajiu.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux命令大全</title>
-    <link href="http://shajiu.com/2021/12/08/linux-ming-ling-da-quan/"/>
-    <id>http://shajiu.com/2021/12/08/linux-ming-ling-da-quan/</id>
-    <published>2021-12-08T08:32:03.000Z</published>
-    <updated>2022-06-16T14:15:26.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;虽然每天都会接触Linux系统, 尤其是使用了Mac之后, 每天都是工作在黑色背景的命令行环境中. 自己记忆力不好, 很多有用的Linux命令不能很好的记忆, 现在逐渐总结一下, 以便后续查看.&lt;/p&gt;
-&lt;h5 id=&quot;Linux关机-重启&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="语言(Linux)" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80-Linux/"/>
     
     
     <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
