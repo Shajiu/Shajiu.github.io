@@ -110,7 +110,6 @@ deploy:
     github: git@github.com:Shajiu/Shajiu.github.io.git
     coding: git@github.com:Shajiu/Shajiu.github.io.git
   branch: master
-- type: baidu_url_submitter
 
 baidusitemap:
     path: baidusitemap.xml
