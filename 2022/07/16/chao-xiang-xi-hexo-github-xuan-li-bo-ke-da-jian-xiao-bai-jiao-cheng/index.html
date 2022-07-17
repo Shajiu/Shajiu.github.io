@@ -459,21 +459,21 @@ Material Design 设计
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-16
+                    2022-07-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.2k
+                    5.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    24 分
                 </div>
                 
 
@@ -596,7 +596,7 @@ nghttp3: 0.1.0-DEV<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"about"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"about"</span>
 <span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="“关于”页面增加简历-可选的"><a href="#“关于”页面增加简历-可选的" class="headerlink" title="“关于”页面增加简历(可选的)"></a>“关于”页面增加简历(可选的)</h3><p>进入博客跟目录下，修改<code> /themes/hexo-theme-matery/layout/about.ejs</code>，找到 &lt;divclass=”card”&gt;标签，然后找到它对应的 标签，接在后面新增一个card，语句如下：</p>
+<h3 id="关于页面增加简历-可选的"><a href="#关于页面增加简历-可选的" class="headerlink" title="关于页面增加简历(可选的)"></a>关于页面增加简历(可选的)</h3><p>进入博客跟目录下，修改<code> /themes/hexo-theme-matery/layout/about.ejs</code>，找到 &lt;divclass=”card”&gt;标签，然后找到它对应的 标签，接在后面新增一个card，语句如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">&lt;div class="card"&gt;
     &lt;div class="card-content"&gt;
         &lt;div class="card-content article-card-content"&gt;
@@ -623,7 +623,73 @@ nghttp3: 0.1.0-DEV<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <blockquote>
 <p><strong>注</strong>：本留言板功能依赖于第三方评论系统，请<strong>激活</strong>你的评论系统才有效果。并且在主题的 <code>_config.yml</code> 文件中，第 <code>19</code> 至 <code>21</code> 行的“<strong>菜单</strong>”配置，取消关于留言板的注释即可。</p>
 </blockquote>
-<h3 id="新建友情链接-friends-页（可选的）"><a href="#新建友情链接-friends-页（可选的）" class="headerlink" title="新建友情链接 friends 页（可选的）"></a>新建友情链接 friends 页（可选的）</h3><p><code>friends</code> 页是用来展示<strong>友情链接</strong>信息的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>friends/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
+<h3 id="增加建站时间-可选的"><a href="#增加建站时间-可选的" class="headerlink" title="增加建站时间(可选的)"></a>增加建站时间(可选的)</h3><p>首先，修改<code>/themes/hexo-theme-matery/layout/_partial/footer.ejs</code>文件，在最后加上</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script language<span class="token operator">=</span>javascript<span class="token operator">&gt;</span>
+    <span class="token keyword">function</span> <span class="token function">siteTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">"siteTime()"</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> seconds <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> minutes <span class="token operator">=</span> seconds <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> hours <span class="token operator">=</span> minutes <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> days <span class="token operator">=</span> hours <span class="token operator">*</span> <span class="token number">24</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> years <span class="token operator">=</span> days <span class="token operator">*</span> <span class="token number">365</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> todayYear <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> todayMonth <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> todayDate <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> todayHour <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> todayMinute <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> todaySecond <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */</span>
+        <span class="token keyword">var</span> t1 <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token constant">UTC</span><span class="token punctuation">(</span><span class="token number">2017</span><span class="token punctuation">,</span> <span class="token number">09</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">00</span><span class="token punctuation">,</span> <span class="token number">00</span><span class="token punctuation">,</span> <span class="token number">00</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//北京时间2018-2-13 00:00:00</span>
+        <span class="token keyword">var</span> t2 <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token constant">UTC</span><span class="token punctuation">(</span>todayYear<span class="token punctuation">,</span> todayMonth<span class="token punctuation">,</span> todayDate<span class="token punctuation">,</span> todayHour<span class="token punctuation">,</span> todayMinute<span class="token punctuation">,</span> todaySecond<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> diff <span class="token operator">=</span> t2 <span class="token operator">-</span> t1<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> diffYears <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>diff <span class="token operator">/</span> years<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> diffDays <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>diff <span class="token operator">/</span> days<span class="token punctuation">)</span> <span class="token operator">-</span> diffYears <span class="token operator">*</span> <span class="token number">365</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> diffHours <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>diff <span class="token operator">-</span> <span class="token punctuation">(</span>diffYears <span class="token operator">*</span> <span class="token number">365</span> <span class="token operator">+</span> diffDays<span class="token punctuation">)</span> <span class="token operator">*</span> days<span class="token punctuation">)</span> <span class="token operator">/</span> hours<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> diffMinutes <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>diff <span class="token operator">-</span> <span class="token punctuation">(</span>diffYears <span class="token operator">*</span> <span class="token number">365</span> <span class="token operator">+</span> diffDays<span class="token punctuation">)</span> <span class="token operator">*</span> days <span class="token operator">-</span> diffHours <span class="token operator">*</span> hours<span class="token punctuation">)</span> <span class="token operator">/</span> minutes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> diffSeconds <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>diff <span class="token operator">-</span> <span class="token punctuation">(</span>diffYears <span class="token operator">*</span> <span class="token number">365</span> <span class="token operator">+</span> diffDays<span class="token punctuation">)</span> <span class="token operator">*</span> days <span class="token operator">-</span> diffHours <span class="token operator">*</span> hours <span class="token operator">-</span> diffMinutes <span class="token operator">*</span> minutes<span class="token punctuation">)</span> <span class="token operator">/</span> seconds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"sitetime"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"本站已运行 "</span> <span class="token operator">+</span>diffYears<span class="token operator">+</span><span class="token string">" 年 "</span><span class="token operator">+</span>diffDays <span class="token operator">+</span> <span class="token string">" 天 "</span> <span class="token operator">+</span> diffHours <span class="token operator">+</span> <span class="token string">" 小时 "</span> <span class="token operator">+</span> diffMinutes <span class="token operator">+</span> <span class="token string">" 分钟 "</span> <span class="token operator">+</span> diffSeconds <span class="token operator">+</span> <span class="token string">" 秒"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token comment">/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/</span>
+    <span class="token function">siteTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其次，在合适的地方(比如copyright声明后面)加上下面的代码即可。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"sitetime"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://s3.bmp.ovh/imgs/2022/07/17/ec4469d1253e8c3f.png" alt="添加合适的sitetime"></p>
+<h3 id="图片添加水印"><a href="#图片添加水印" class="headerlink" title="图片添加水印"></a>图片添加水印</h3><p>为了防止别人抄袭你文章，可以把所有的图片都加上水印，方法很简单。首先在博客根目录下新建一个<code> watermark.py</code>，代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*- coding: utf-8 -*-</span>
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> glob
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> ImageDraw
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> ImageFont
+<span class="token keyword">def</span> <span class="token function">watermark</span><span class="token punctuation">(</span>post_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> post_name <span class="token operator">==</span> <span class="token string">'all'</span><span class="token punctuation">:</span>
+        post_name <span class="token operator">=</span> <span class="token string">'*'</span>
+    dir_name <span class="token operator">=</span> <span class="token string">'source/_posts/'</span> <span class="token operator">+</span> post_name <span class="token operator">+</span> <span class="token string">'/*'</span>
+    <span class="token keyword">for</span> files <span class="token keyword">in</span> glob<span class="token punctuation">.</span>glob<span class="token punctuation">(</span>dir_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        im <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>im<span class="token punctuation">.</span>getbands<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">:</span>
+            im <span class="token operator">=</span> im<span class="token punctuation">.</span>convert<span class="token punctuation">(</span><span class="token string">'RGB'</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
+        font <span class="token operator">=</span> ImageFont<span class="token punctuation">.</span>truetype<span class="token punctuation">(</span><span class="token string">'STSONG.TTF'</span><span class="token punctuation">,</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>im<span class="token punctuation">.</span>size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        draw <span class="token operator">=</span> ImageDraw<span class="token punctuation">.</span>Draw<span class="token punctuation">(</span>im<span class="token punctuation">)</span>
+        draw<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token punctuation">(</span>im<span class="token punctuation">.</span>size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> im<span class="token punctuation">.</span>size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  <span class="token string">u'@yourname'</span><span class="token punctuation">,</span> fill<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> font<span class="token operator">=</span>font<span class="token punctuation">)</span>
+        im<span class="token punctuation">.</span>save<span class="token punctuation">(</span>files<span class="token punctuation">)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        watermark<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'[usage] &lt;input&gt;'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>字体也放根目录下，自己找字体。然后每次写完一篇文章可以运行 <code>python3 watermark.py postname</code>添加水印，如果第一次运行要给所有文章添加水印，可以运行 <code>python3 watermark.py all</code>。</p>
+<h3 id="新建友情链接-friends-页-可选的"><a href="#新建友情链接-friends-页-可选的" class="headerlink" title="新建友情链接 friends 页(可选的)"></a>新建友情链接 friends 页(可选的)</h3><p><code>friends</code> 页是用来展示<strong>友情链接</strong>信息的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>friends/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page <span class="token string">"friends"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>编辑你刚刚新建的页面文件 <code>/source/friends/index.md</code>，至少需要以下内容：</p>
@@ -1616,7 +1682,7 @@ Any content (support inline tags too).
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">55.5k</span>
+                        class="white-color">56.1k</span>
             
             
             
@@ -1635,7 +1701,7 @@ Any content (support inline tags too).
             </span>
             
             <br>
-
+            <span id="sitetime"></span>
             <!-- 运行天数提醒. -->
             
             <br>
@@ -1681,7 +1747,41 @@ Any content (support inline tags too).
 </footer>
 
 <div class="progress-bar"></div>
-
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2021, 09, 19, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>s's
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
