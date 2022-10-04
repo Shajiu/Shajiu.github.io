@@ -6,7 +6,7 @@
   <link href="http://shajiu.com/atom.xml" rel="self"/>
   
   <link href="http://shajiu.com/"/>
-  <updated>2022-07-17T14:04:49.153Z</updated>
+  <updated>2022-10-04T05:45:19.403Z</updated>
   <id>http://shajiu.com/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>构建基于医学领域的藏语命名实体识别数据集</title>
+    <link href="http://shajiu.com/2022/10/04/gou-jian-ji-yu-yi-xue-ling-yu-de-cang-yu-ming-ming-shi-ti-shi-bie-shu-ju-ji/"/>
+    <id>http://shajiu.com/2022/10/04/gou-jian-ji-yu-yi-xue-ling-yu-de-cang-yu-ming-ming-shi-ti-shi-bie-shu-ju-ji/</id>
+    <published>2022-10-04T03:04:53.000Z</published>
+    <updated>2022-10-04T05:45:19.403Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天小编为大家告知一篇关于构建基于医学领域的藏语命名实体识别数据集。&lt;/p&gt;
+&lt;h4 id=&quot;一、获取中文医学命名实体识别-CMeEE-数据集&quot;&gt;&lt;a href=&quot;#一、获取中文医学命名实体识别-CMeEE-数据集&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vsCode在线与离线安装remote-ssh插件搭建远程开发环境</title>
+    <link href="http://shajiu.com/2022/08/01/vscode-zai-xian-yu-chi-xian-an-zhuang-remote-ssh-cha-jian-da-jian-yuan-cheng-kai-fa-huan-jing/"/>
+    <id>http://shajiu.com/2022/08/01/vscode-zai-xian-yu-chi-xian-an-zhuang-remote-ssh-cha-jian-da-jian-yuan-cheng-kai-fa-huan-jing/</id>
+    <published>2022-08-01T13:59:38.000Z</published>
+    <updated>2022-08-01T14:11:13.863Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>超详细Hexo+Github绚丽博客搭建小白教程</title>
@@ -461,56 +504,6 @@
     
     
     <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于LiquiBase的学习笔记</title>
-    <link href="http://shajiu.com/2021/12/13/guan-yu-liquibase-de-xue-xi-bi-ji/"/>
-    <id>http://shajiu.com/2021/12/13/guan-yu-liquibase-de-xue-xi-bi-ji/</id>
-    <published>2021-12-13T08:47:01.000Z</published>
-    <updated>2022-06-16T14:15:26.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;关于LiquiBase的学习笔记&quot;&gt;&lt;a href=&quot;#关于LiquiBase的学习笔记&quot; class=&quot;headerlink&quot; title=&quot;关于LiquiBase的学习笔记&quot;&gt;&lt;/a&gt;关于LiquiBase的学习笔记&lt;/h3&gt;&lt;p&gt;$\quad$</summary>
-        
-      
-    
-    
-    
-    <category term="语言(Java)" scheme="http://shajiu.com/categories/%E8%AF%AD%E8%A8%80-Java/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>决策树</title>
-    <link href="http://shajiu.com/2021/12/12/jue-ce-shu/"/>
-    <id>http://shajiu.com/2021/12/12/jue-ce-shu/</id>
-    <published>2021-12-12T03:30:55.000Z</published>
-    <updated>2022-06-16T14:15:26.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;决策树&quot;&gt;&lt;a href=&quot;#决策树&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="算法" scheme="http://shajiu.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
     
   </entry>
   
