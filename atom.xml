@@ -6,7 +6,7 @@
   <link href="http://shajiu.com/atom.xml" rel="self"/>
   
   <link href="http://shajiu.com/"/>
-  <updated>2022-10-04T05:45:19.403Z</updated>
+  <updated>2022-12-21T08:30:53.896Z</updated>
   <id>http://shajiu.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无参数机器翻译遇上对比学习效率和性能我全都要</title>
+    <link href="http://shajiu.com/2022/12/20/wu-can-shu-ji-qi-fan-yi-yu-shang-dui-bi-xue-xi-xiao-lu-he-xing-neng-wo-quan-du-yao/"/>
+    <id>http://shajiu.com/2022/12/20/wu-can-shu-ji-qi-fan-yi-yu-shang-dui-bi-xue-xi-xiao-lu-he-xing-neng-wo-quan-du-yao/</id>
+    <published>2022-12-20T07:24:25.000Z</published>
+    <updated>2022-12-21T08:30:53.896Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="机器翻译" scheme="http://shajiu.com/categories/%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91/"/>
+    
+    
+    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>构建基于医学领域的藏语命名实体识别数据集</title>
@@ -476,31 +501,6 @@
     
     
     <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于BERT舆情分析的Demo实例</title>
-    <link href="http://shajiu.com/2021/12/17/ji-yu-bert-yu-qing-fen-xi-de-demo-shi-li/"/>
-    <id>http://shajiu.com/2021/12/17/ji-yu-bert-yu-qing-fen-xi-de-demo-shi-li/</id>
-    <published>2021-12-17T14:44:53.000Z</published>
-    <updated>2022-06-16T14:15:27.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;基于BERT舆情分析的Demo实例&quot;&gt;&lt;a href=&quot;#基于BERT舆情分析的Demo实例&quot; class=&quot;headerlink&quot; title=&quot;基于BERT舆情分析的Demo实例&quot;&gt;&lt;/a&gt;基于BERT舆情分析的Demo实例&lt;/h4&gt;&lt;h5</summary>
-        
-      
-    
-    
-    
-    <category term="周总结(BERT)" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93-BERT/"/>
     
     
     <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
