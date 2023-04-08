@@ -1,0 +1,1778 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="SELF-INSTRUCT：将语言模型与自生成指令对齐, ECNU NLP DeepLearning AntNLP 沙九 甘南第一勇士 自然语言处理 机器学习 深度学习 机器翻译 藏语信息处理 源码上门取算法码上来">
+    <meta name="description" content="一、引言$\quad$随着大规模语言模型(LLM)的能力范围越来越广，其中有两个关键的组成部分: 大型预训练语言模型(LM) 和人类书写的指令数据。然而，①现有指令微调严重依赖于人编写的指令数据，这些数据在规模、多样性和创造性等方面都受限，">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>SELF-INSTRUCT：将语言模型与自生成指令对齐 | 沙九的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="沙九的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">沙九的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">沙九的博客</div>
+        <div class="logo-desc">
+            
+            北京理工大学 | 计算机科学与技术 | 自然语言处理
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Shajiu/Shajiu.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Shajiu/Shajiu.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">SELF-INSTRUCT：将语言模型与自生成指令对齐</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%B8%93%E4%B8%9A/">
+                                <span class="chip bg-color">专业</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="post-category">
+                                大模型
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-04-08
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-04-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h4><p>$\quad$随着大规模语言模型(LLM)的能力范围越来越广，其中有两个关键的组成部分: <strong>大型预训练语言模型(LM)</strong> 和<strong>人类书写的指令数据</strong>。然而，<font color="#FF0000">①现有指令微调严重依赖于人编写的指令数据，这些数据在规模、多样性和创造性等方面都受限，阻碍了调优模型的通用性；②涉及到的人工标注需求量快速增长，标注成本也不断提高。</font>因此，一些研究人员尝试提出一种能够让模型自己引导自己生成过程的方法，以解决人工成本对模型能力增强的瓶颈。</p>
+<p>$\quad$近期，华盛顿大学等机构联合发表一篇论文<a href="SELF-INSTRUCT" title="SELF-INSTRUCT: Aligning Language Model with SelfGenerated Instructions">SELF-INSTRUCT</a>，提出的新框架SELF-INSTRUCT通过引导模型自己的生成过程，提高了预训练语言模型的指令遵循能力。SELF-INSTRUCT是使用预训练语言模型自身的指令信号进行指令调整的半自动化过程。具体而言，通过让模型自己生成指令信号来指导模型对指令进行微调，从而提高其性能和效果。是一种迭代的自助重采样算法。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/D8qqS458"><img src="https://i.postimg.cc/SNPVtWM7/q.png" alt="图1 SELF-INSTRUCT"></a></p>
+<h5 id="1-1-背景知识"><a href="#1-1-背景知识" class="headerlink" title="1.1 背景知识"></a>1.1 背景知识</h5><p>$\quad$ $\quad$  Bootstrap：一种统计学方法，可以通过从样本数据集中随机抽样的方式来生成大量新的数据集，然后利用这些数据集进行统计分析。具体而言，Bootstrap通过对原始数据进行自助重采样来生成新的数据集，然后利用这些新数据集进行参数估计、假设检验等统计分析，从而能够更好地评估统计指标的置信区间、偏差等性质。</p>
+<h5 id="1-2-基本步骤"><a href="#1-2-基本步骤" class="headerlink" title="1.2 基本步骤"></a>1.2 基本步骤</h5><p>$\quad$ $\quad$ 首先整体说明一下该方法的流程，大致有如下几个步骤：</p>
+<ul>
+<li>1.人工设计了175个表示不同任务的指令，并且给每条数据都编写了（指令, 输入, 输出）/（指令, 输出），将这175条数据作为种子池。</li>
+<li>2.使用模型生成新的指令；</li>
+<li>3.对该模型生成的指令判断是否分类任务；</li>
+<li>4.使用模型生成实例；</li>
+<li>5.对上述模型生成的数据进行过滤和后处理；</li>
+<li>6.将经过过滤和后处理的数据添加到种子池中；</li>
+<li>7.一直重复上述2到6步直到种子池有足够多的数据；</li>
+</ul>
+<h5 id="1-3-本文贡献"><a href="#1-3-本文贡献" class="headerlink" title="1.3 本文贡献"></a>1.3 本文贡献</h5><ul>
+<li>本文提出了一种Self-Instruct框架，该框架可以使用最少的人工标注，生成大量的用于Instruct-tuning的数据；</li>
+<li>本文中通过多个实验验证了上述方法的有效性；</li>
+<li>本文发布了52K的使用上述方法获取的用于Instruct-tuning的数据集，以及一份人工手动编写的新任务的数据集；</li>
+</ul>
+<h4 id="二、相关工作"><a href="#二、相关工作" class="headerlink" title="二、相关工作"></a>二、相关工作</h4><ul>
+<li><strong>基于指令遵循的语言模型</strong></li>
+</ul>
+<p>$\quad$ 基于指令遵循的语言模型(Instruction-following language models)工作研究发现，如果使用带注释的“Instruction”数据(包含语言教学命令及其基于人类判断的预期结果的数据集)进行调优，基于指令遵循的语言模型可以有效地遵循一般语言指令。</p>
+<p>$\quad$ 然而“Instruction”数据的大小和多样性直接影响模型对未见任务的泛化性能，导致基于指令遵循的语言模型依赖于人工注释的“Instruction”数据，这就为更一般化的模型的进展带来了瓶颈(报告来自<a href="Wang" title="Super-naturalinstructions: Generalization via declarative instructions on 1600+ nlp tasks">Wang et al., 2022</a>)。本文工作旨在通过减少对人工标注的依赖来解决这一瓶颈。</p>
+<ul>
+<li><strong>用于数据生成和增强的语言模型</strong></li>
+</ul>
+<p>$\quad$ 用于数据生成和增强的语言模型(Language models for data generation and augmentation)，许多工作都依赖于生成式LMs来生成数据或增强数据，更多是通过特定提示针对特定的任务进行数据增强。</p>
+<p>$\quad$ 相比之下，Self-instruction的一个明显动机是引导新的任务定义，这些任务可能是任何NLP从业者以前都没有定义过的(尽管对下游用户可能仍很重要)。</p>
+<ul>
+<li><strong>自训练</strong></li>
+</ul>
+<p>$\quad$自训练(self-training)。一个典型的自训练框架<a href="Heal.,2019" title="Revisiting self-training for neural sequence generation.">He et al., 2019</a>，通过使用已训练的模型为未标记的数据进行标注，然后利用新标注的伪数据优化模型。在类似的思路中，<a href="Zhou" title="Prompt Consistency for Zero-Shot Task Generalization.">Zhou et al. 2022a</a>使用多个提示来指定单个任务，并建议通过提示一致性进行正则化，鼓励对提示进行一致的预测。这允许使用额外的未标记训练数据对模型进行微调，或在推理时直接应用。</p>
+<p>$\quad$ 虽然SELF-INSTRUCT与Self-Training相关工作有一些相似之处，但大多数Self-Training方法都假设了一个特定的目标任务以及它下面未标记的例子;与此形成鲜明对比的是SELF-INSTRUCT可以从零开始完成各种任务。</p>
+<ul>
+<li><strong>知识蒸馏</strong></li>
+</ul>
+<p>$\quad$ 知识蒸馏(Knowledge distillation)。知识蒸馏通常涉及从较大模型到较小模型的知识转移。SELF-INSTRUCT也可以被认为一种“知识蒸馏”的形式。</p>
+<p>$\quad$ 然而，与此不同的是①蒸馏的来源和目标是相同的，即模型的知识被蒸馏到自身;②蒸馏的内容以指令任务的形式出现(即，定义任务的指令和实例化任务的一组示例)。</p>
+<ul>
+<li><strong>用有限资源进行自助重采样</strong></li>
+</ul>
+<p>$\quad$用有限资源进行自助重采样(Bootstrapping with limited resources)。最近的一系列工作使用语言模型使用专门的方法引导一些推断。<a href="NPPrompt" title="Pre-trained language models can be fully zero-shot learners">NPPrompt</a>提供了一种无需任何微调就可以生成语义标签预测的方法。它使用模型自己的嵌入来自动查找与数据样本标签相关的单词，从而减少了对从模型预测到标签(语言分析器)的手动映射的依赖。<a href="STAR" title="STaR: Bootstrapping Reasoning With Reasoning">STAR</a>迭代利用少量基本原理示例和没有基本原理的大型数据集，引导模型执行推理的能力。<a href="Self-Correction" title="Generating sequences by learning to self-correct">Self-Correction</a>将一个不完整的基本生成器(模型)与一个独立的校正器解耦，该校正器学习迭代地纠正不完美的基本生成器，并扮演了对基本生成器的改进。相反，SELF-INSTRUCT侧重于引导指令范例中的新任务。</p>
+<ul>
+<li><strong>指令生成</strong></li>
+</ul>
+<p>$\quad$指令生成(Instruction generation),最近有不少指令生成相关工作，例如<a href="Large" title="Large Language Models Are Human-Level Prompt Engineers">Large Language Models Are Human-Level Prompt Engineers</a>;<a href="Guess" title="Guess the Instruction!Flipped Learning Makes Language Models Stronger Zero-Shot Learners">Guess the Instruction!Flipped Learning Makes Language Models Stronger Zero-Shot Learners</a>;<a href="Explaining" title="Explaining Patterns in Data with Language Models via Interpretable Autoprompting">Explaining Patterns in Data with Language Models via Interpretable Autoprompting</a>;<a href="Instruction" title="Instruction Induction: From Few Examples to Natural Language Task Descriptions">Instruction Induction: From Few Examples to Natural Language Task Descriptions</a>。虽然SELFINSTRUCT也涉及指令生成，但在我们的案例中主要的区别是它是任务不可知的;我们从头开始生成新的任务(指令和实例)。</p>
+<h4 id="三、Self-Instruct方法"><a href="#三、Self-Instruct方法" class="headerlink" title="三、Self-Instruct方法"></a>三、Self-Instruct方法</h4><h5 id="3-1-指令数据集的定义"><a href="#3-1-指令数据集的定义" class="headerlink" title="3.1 指令数据集的定义"></a>3.1 指令数据集的定义</h5><p>$\quad$ 一个任务$t$对应一个指令$I_t$，每个任务有一个或多个输入-输出实例$(X_t,Y_t)$。在给定任务指令$I_t$和实例输入$x$的情况下，模型$M$期望产生输出$y$。即$M(I_t,x)=y$。一般的，指令数据集中的一条数据包含(指令, 输入, 输出)这三部分，例如如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">指令：写一篇关于以下主题的文章
+输入：校园安全
+输出：校园安全是学校必须高度重视的问题，涉及到师生的生命财产安全。建立安全意识，制定严格的规章制度，加强安全巡查和应急预案，是确保校园安全的关键。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>$\quad$ 不过很多时候对于上述三部分中的”指令”和”输入”划分的不是那么清晰，比如下面这条数据基本可以认为和上述例子是相同的：</p>
+<pre class="line-numbers language-none"><code class="language-none">指令：写一篇以校园安全为主题的文章
+输出：校园安全是学校必须高度重视的问题，涉及到师生的生命财产安全。建立安全意识，制定严格的规章制度，加强安全巡查和应急预案，是确保校园安全的关键。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>$\quad$ 所以在本文的后续部分，指令数据集中的一条数据可能包含三部分（指令, 输入, 输出），也可能只有两部分（指令, 输出）。例如如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">指令：将下述中文翻译为英文
+输入：中国的首都是北京。
+输出：China's capital city is Beijing.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-2-自动生成指令数据"><a href="#3-2-自动生成指令数据" class="headerlink" title="3.2 自动生成指令数据"></a>3.2 自动生成指令数据</h5><p>$\quad$ 生成指令数据的由四个步骤构成:①指令生成；②识别指令是否代表分类任务；③使用输入优先或输出优先方法生成实例；④过滤低质量数据</p>
+<ul>
+<li><strong>指令生成程序</strong></li>
+</ul>
+<p>$\quad$ Self-instruction基于这样一个发现：当上下文中出现一些现有指令时，预训练语言模型可以被提示生成新的指令。这为我们提供了一种从一小组人类编写的种子指令增长指令数据的方法。本文建议以自举方式生成一组不同的指令。通过作者编写的175个任务(每个任务有一条指令和一个实例)启动任务池。</p>
+<p>$\quad$生成指令时，先从种子池中随机抽取6个人工编写的指令，再随机抽取2个之前步骤中模型生成的指令，总共8个指令。以如下表6的模版格式组织之后，输入给模型，让模型输出一个新的指令。生成指令时使用的prompt模版如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">Come up with a series of tasks:
+Task 1: {instruction for existing task 1}
+Task 2: {instruction for existing task 2}
+Task 3: {instruction for existing task 3}
+Task 4: {instruction for existing task 4}
+Task 5: {instruction for existing task 5}
+Task 6: {instruction for existing task 6}
+Task 7: {instruction for existing task 7}
+Task 8: {instruction for existing task 8}
+Task 9:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>分类任务识别</strong></li>
+</ul>
+<p>$\quad$ 这里之所以需要判断指令是否属于分类任务，主要是因为在给该指令生成实例时，分类任务与非分类任务使用的prompt模版是不同的。</p>
+<p>$\quad$ 判断指令是否属于分类任务的操作如下：在种子池中随机挑选12条分类指令和19条非分类指令，然后加上新生成的指令，以下表7的模版格式组织之后，输入给模型，让模型输出新生成的指令是否分类任务。判断指令是否分类任务的prompt模版如下所示:</p>
+<pre class="line-numbers language-none"><code class="language-none">Can the following task be regarded as a classification task with finite output labels?
+Task: Given my personality and the job, tell me if I would be suitable.
+Is it classification? Yes
+Task: Give me an example of a time when you had to use your sense of humor.
+Is it classification? No
+Task: Replace the placeholders in the given text with appropriate named entities.
+Is it classification? No
+Task: Fact checking - tell me if the statement is true, false, or unknown, based on your
+knowledge and common sense.
+Is it classification? Yes
+Task: Return the SSN number for the person.
+Is it classification? No
+Task: Detect if the Reddit thread contains hate speech.
+Is it classification? Yes
+Task: Analyze the sentences below to identify biases.
+Is it classification? No
+Task: Select the longest sentence in terms of the number of words in the paragraph, output
+the sentence index.
+Is it classification? Yes
+Task: Find out the toxic word or phrase in the sentence.
+Is it classification? No
+Task: Rank these countries by their population.
+Is it classification? No
+Task: You are provided with a news article, and you need to identify all the categories that
+this article belongs to. Possible categories include: Music, Sports, Politics, Tech, Finance,
+Basketball, Soccer, Tennis, Entertainment, Digital Game, World News. Output its categories one
+by one, seperated by comma.
+Is it classification? Yes
+Task: Given the name of an exercise, explain how to do it.
+Is it classification? No
+Task: Select the oldest person from the list.
+Is it classification? Yes
+Task: Find the four smallest perfect numbers.
+Is it classification? No
+Task: Does the information in the document supports the claim? You can answer "Support" or
+"Unsupport".
+Is it classification? Yes
+Task: Create a detailed budget for the given hypothetical trip.
+Is it classification? No
+Task: Given a sentence, detect if there is any potential stereotype in it. If so, you should
+explain the stereotype. Else, output no.
+Is it classification? No
+⋯
+Task: To make the pairs have the same analogy, write the fourth word.
+Is it classification? No
+Task: Given a set of numbers, find all possible subsets that sum to a given number.
+Is it classification? No
+Task: {instruction for the target task}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>示例生成</strong></li>
+</ul>
+<p>$\quad$ 在给定了指令之后，生成实例的过程对LLM 模型的效果要求是比较高的，所以最好选取效果比较好的LLM。然后在给定指令之后，生成（输入, 输出）这个实例对时还有两种策略。一种是先生成输入，后生成输出，即输入优先策略；另一种是先生成输出，后生成输入，即输出优先策略。之所以会有输出优先的方式，是因为输入优先的方式在生成输入时，偏向于只生成一个标签，尤其是指令对应着分类任务时，其输入里面偏向于只生成一个类别。输出优先就是为了一定程度上缓解该问题。</p>
+<ul>
+<li>输入优先</li>
+</ul>
+<p>$\quad$ 前面已经说过一条数据的样式可能是（指令, 输入, 输出），也可能是（指令, 输出）。另外，指令数据集的丰富度我们是希望越丰富越好，所以还允许出现一个指令，多个输入的数据，举例如下。在这个例子中，Task 对应的就是指令，然后这个指令有2对（输入, 输出）。</p>
+<p>$\quad$  然后具体生成实例的操作步骤为：在种子池中随机抽取 k 条数据，以如下的prompt模版的形式组合之后，输入给模型，让模型为最后的指令生成相应的实例，输入优先生成实例的prompt模版如下所示:</p>
+<pre class="line-numbers language-none"><code class="language-none">Come up with examples for the following tasks. Try to generate multiple examples when possible.
+If the task doesn’t require additional input, you can generate the output directly.
+Task: Which exercises are best for reducing belly fat at home?
+Output:
+- Lying Leg Raises
+- Leg In And Out
+- Plank
+- Side Plank
+- Sit-ups
+Task: Extract all the country names in the paragraph, list them separated by commas.
+Example 1
+Paragraph: Dr. No is the sixth novel by the English author Ian Fleming to feature his British
+Secret Service agent James Bond. Written at Fleming’s Goldeneye estate in Jamaica, it was
+first published in the United Kingdom by Jonathan Cape in 1958. In the novel Bond looks into
+the disappearance in Jamaica of two fellow MI6 operatives who had been investigating Doctor
+No. Bond travels to No’s Caribbean island and meets Honeychile Rider, who is there to collect
+shells. They are captured and taken to a luxurious facility carved into a mountain. The
+character of Doctor No, the son of a German missionary and a Chinese woman, was influenced by
+Sax Rohmer’s Fu Manchu stories. Dr. No was the first of Fleming’s novels to face widespread
+negative reviews in Britain, but it was received more favourably in the United States.
+Output: English, British, Jamaica, the United Kingdom, German, Chinese, Britain, the United
+States.
+Task: Converting 85 F to Celsius.
+Output: 85°F = 29.44°C
+Task: Sort the given list ascendingly.
+Example 1
+List: [10, 92, 2, 5, -4, 92, 5, 101]
+Output: [-4, 2, 5, 5, 10, 92, 92, 101]
+Example 2
+Input 2 - List: [9.99, 10, -5, -1000, 5e6, 999]
+Output: [-1000, -5, 9.99, 10, 999, 5e6]
+Task: Suggest a better and more professional rephrasing of the following sentence.
+Example 1
+Sentence: This house is surprisingly not constructed very well, and you probably need more
+money to fix it after you buy it. If you ask me, I would suggest you to consider other
+candidates.
+Output: This house does not seem to be constructed well, so you may need to spend more money
+to fix it after you purchase it. I would suggest that you look at other properties.
+Example 2
+Sentence: Just so you know, we did an experiment last week and found really surprising results
+- language model can improve itself!
+Output: Our experiments last week demonstrated surprising results, proving that the language
+model can improve itself.
+⋯
+Task: Turn down a job offer by sending an email to a recruiter explaining the reason.
+Output: Hi [Recruiter],
+Thank you so much for the generous offer to join your team. As we discussed, I’ve admired the
+company for a number of years, and am a proud endorser of its products. However, after further
+consideration of where I currently am in my career, I’ve decided to accept an offer at another
+company.
+I would love to stay in touch with you and have already started following you on [Social Media
+Platform]. Again, thank you so much for your time and consideration.
+Thanks again,
+[Your Name]
+Task: {Instruction for the target task}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>输出优先</li>
+</ul>
+<p>$\quad$ 对于分类任务，如果先生成文本，后生成标签，模型会偏向于生成比较单一的结果。所以对于分类任务，是先生成随机的标签，然后再生成该标签对应的文本。</p>
+<p>$\quad$ 具体的步骤和输入优先基本相同：在种子池中随机抽取k条在之前的步骤中已经标记为分类的数据，以如下的prompt模版的形式组合之后，输入给模型，让模型为最后的指令生成相应的实例。如下表9所示。可以看出都是先生成分类标签，再生成待分类的文本。输出优先生成实例的prompt模版如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">Given the classification task definition and the class labels, generate an input that
+corresponds to each of the class labels. If the task doesn’t require input, just generate the
+correct class label.
+Task: Classify the sentiment of the sentence into positive, negative, or mixed.
+Class label: mixed
+Sentence: I enjoy the flavor of the restaurant but their service is too slow.
+Class label: Positive
+Sentence: I had a great day today. The weather was beautiful and I spent time with friends.
+Class label: Negative
+Sentence: I was really disappointed by the latest superhero movie. I would not recommend it.
+Task: Given a dialogue, classify whether the user is satisfied with the service. You should
+respond with "Satisfied" or "Unsatisfied".
+Class label: Satisfied
+Dialogue:
+- Agent: Thank you for your feedback. We will work to improve our service in the future.
+- Customer: I am happy with the service you provided. Thank you for your help.
+Class label: Unsatisfied
+Dialogue:
+- Agent: Sorry that we will cancel your order. You will get a refund within 7 business days.
+- Customer: oh that takes too long. I want you to take quicker action on this.
+Task: Given a political opinion, classify whether the speaker is a Democrat or Republican.
+Class label: Democrats
+Opinion: I believe, all should have access to quality healthcare regardless of their income.
+Class label: Republicans
+Opinion: I believe that people should be able to keep more of their hard-earned money and
+should not be taxed at high rates.
+Task: Tell me if the following email is a promotion email or not.
+Class label: Promotion
+Email: Check out our amazing new sale! We’ve got discounts on all of your favorite products.
+Class label: Not Promotion
+Email: We hope you are doing well. Let us know if you need any help.
+Task: Detect if the Reddit thread contains hate speech.
+Class label: Hate Speech
+Thread: All people of color are stupid and should not be allowed to vote.
+Class label: Not Hate Speech
+Thread: The best way to cook a steak on the grill.
+Task: Does the document supports the claim? Answer with "Support" or "Unsupport".
+Class label: Unsupport
+Document: After a record-breaking run that saw mortgage rates plunge to all-time lows and
+home prices soar to new highs, the U.S. housing market finally is slowing. While demand and
+price gains are cooling, any correction is likely to be a modest one, housing economists and
+analysts say. No one expects price drops on the scale of the declines experienced during the
+Great Recession.
+Claim: The US housing market is going to crash soon.
+Class label: Support
+Document: The U.S. housing market is showing signs of strain, with home sales and prices
+slowing in many areas. Mortgage rates have risen sharply in recent months, and the number
+of homes for sale is increasing. This could be the beginning of a larger downturn, with some
+economists predicting a potential housing crash in the near future.
+Claim: The US housing market is going to crash soon.
+⋯
+Task: Tell me the first number of the given list.
+Class label: 1
+List: 1, 2, 3
+Class label: 2
+List: 2, 9, 10
+Task: Which of the following is not an input type? (a) number (b) date (c) phone number (d)
+email address (e) all of these are valid inputs.
+Class label: (e)
+Task: {instruction for the target task}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>过滤和后处理</strong></li>
+</ul>
+<p>$\quad$ 为了数据的多样性，新生成的指令只有与种子池中的指令的 ROUGE-L 小于0.7时才会添加进入种子池；排除一些无法被语言模型处理的指令，比如涉及图像、图片、图形的指令；在给指令生成实例时，会过滤掉输入相同但是输出不同的实例。</p>
+<h5 id="3-3-微调LM以遵循指令"><a href="#3-3-微调LM以遵循指令" class="headerlink" title="3.3 微调LM以遵循指令"></a>3.3 微调LM以遵循指令</h5><p>$\quad$ 在创建大规模指令数据后，本文使用这些数据对原始语言模型(即self-Instruction)进行微调。为此，本文将指令和实例输入拼接起来作为提示符，并训练模型以标准的监督方式生成实例输出。为了使模型对不同格式具有健壮性，本文使用多个模板将指令和实例一起输入进行编码。例如，指令可以加前缀“Task:”或不加前缀，输入可以加前缀“input:”或不加前缀，提示符末尾可以加“Output:”，中间可以加不同数量的换行符等等。</p>
+<h4 id="四、来自GPT3的SELF-INSTRUCT数据集"><a href="#四、来自GPT3的SELF-INSTRUCT数据集" class="headerlink" title="四、来自GPT3的SELF-INSTRUCT数据集"></a>四、来自GPT3的SELF-INSTRUCT数据集</h4><p>本文调用LLM GPT3的“davinci”模型，其<a target="_blank" rel="noopener" href="https://openai.com/api/">OpenAI API</a>。</p>
+<h5 id="4-1-统计数据集"><a href="#4-1-统计数据集" class="headerlink" title="4.1 统计数据集"></a>4.1 统计数据集</h5><p>$\quad$如下表描述了生成数据的基本统计信息。总共生成了超过52K条指令，过滤后这些指令对应的实例超过82K个：</p>
+<table>
+<thead>
+<tr>
+<th>指令格式</th>
+<th>统计数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td># of instructions</td>
+<td>52,445</td>
+</tr>
+<tr>
+<td>- # of classification instructions</td>
+<td>11,584</td>
+</tr>
+<tr>
+<td>- # of non-classification instructions</td>
+<td>40,861</td>
+</tr>
+<tr>
+<td># of instances</td>
+<td>82,439</td>
+</tr>
+<tr>
+<td>- # of instances with empty input</td>
+<td>35,878</td>
+</tr>
+<tr>
+<td>ave. instruction length (in words)</td>
+<td>15.9</td>
+</tr>
+<tr>
+<td>ave. non-empty input length (in words)</td>
+<td>12.7</td>
+</tr>
+<tr>
+<td>ave. output length (in words)</td>
+<td>18.9</td>
+</tr>
+</tbody></table>
+<h5 id="4-2-多样性"><a href="#4-2-多样性" class="headerlink" title="4.2 多样性"></a>4.2 多样性</h5><p>$\quad$ 为了研究生成的指令类型以及它们的多样性，本文识别生成指令中的动词-名词结构。具体使用<a target="_blank" rel="noopener" href="https://parser.kitaev.io/">Neural Parser</a>工具进行分析，然后提取最接近解析树根的动词及其第一个直接名词对象。在52,445条指令中，有26,559条包含这种结构;其他指示通常包含更复杂的从句(例如，“分类这条推文是否包含政治内容。”)或被框定为问题(例如，“这些陈述中哪一个是真的?”)。在如下图中绘制了前20个最常见的词根动词及其前4个直接名词宾语，占整个组的14%。总而言之，本文在这些指令中看到了相当不同的意图和文本格式。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/WDPhX42D"><img src="https://i.postimg.cc/43YV4Kq1/2.png" alt="图2 生成指令的多样性分析"></a></p>
+<p>$\quad$ 本文进一步研究生成的指令与用于提示生成的种子指令有何不同。对于每条生成的指令，本文计算它与175条种子指令的最高ROUGE-L重叠。本文在如下图3中绘制了这些ROUGE-L分数的分布：表明有相当数量的新指令与种子没有太多重叠。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/zy4PQ9MH"><img src="https://i.postimg.cc/vmmF4yth/3.png" alt="图3 生成指令和它们最相似的种子指令之间的ROUGE-L分数分布"></a></p>
+<p>另外还在图4中演示了指令、实例输入和实例输出长度的多样性。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/XGLLnh28"><img src="https://i.postimg.cc/mkf5yWC0/4.png" alt="图4 生成指令、非空输入和输出的长度分布"></a></p>
+<h5 id="4-3-质量"><a href="#4-3-质量" class="headerlink" title="4.3 质量"></a>4.3 质量</h5><p>$\quad$ 数据质量的评估方式：随机抽取200条指令，并给每个指令随机抽取一个实例，然后人工对该指令和实例进行标注评估。对生成数据的指令、输入和输出进行数据质量检查，评估结果。</p>
+<table>
+<thead>
+<tr>
+<th>Quality Review Question</th>
+<th>Yes %</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Does the instruction；describe a valid task?</td>
+<td>92%</td>
+</tr>
+<tr>
+<td>Is the input appropriate；for the instruction?</td>
+<td>79%</td>
+</tr>
+<tr>
+<td>Is the output a correct and acceptable；response to the instruction and input?</td>
+<td>58%</td>
+</tr>
+<tr>
+<td>All fields are valid</td>
+<td>54%</td>
+</tr>
+</tbody></table>
+<ul>
+<li>生成的指令有含义，能表示一个任务的占比为92%；</li>
+<li>给每个指令生成合适的输入的占比为79%；</li>
+<li>生成的输出是指令和输入的正确结果的占比为58%；</li>
+<li>指令、输入、输出，这三个字段全对的占比为54%；</li>
+</ul>
+<p>$\quad$可以看出使用Self-Instruct生成的数据集还是有一些噪音的，即使可能包含错误，但大多数仍然是正确的格式，甚至部分正确，这可以为训练模型遵循指令提供有用的指导。如下分别展示生成有效指令和无效指令:</p>
+<ul>
+<li>有效的指令：GPT3生成的代表性有效任务。这些生成的任务涵盖了广泛的格式、文本类型和基础专业知识，同时在所有生成的任务中有一半以上是正确的。</li>
+<li>无效的指令：GPT3生成的代表性无效任务。有问题的字段显示在有效性列中。尽管这些任务包含错误，但它们仍然为监督模型遵循指令提供了许多有用的信号。</li>
+</ul>
+<h4 id="五、实验结果"><a href="#五、实验结果" class="headerlink" title="五、实验结果"></a>五、实验结果</h4><h5 id="5-1-GPT3-SELF-INST-：使用Self-Instruct生成的数据集对GPT3进行微调"><a href="#5-1-GPT3-SELF-INST-：使用Self-Instruct生成的数据集对GPT3进行微调" class="headerlink" title="5.1 $GPT3_{SELF-INST}$：使用Self-Instruct生成的数据集对GPT3进行微调"></a>5.1 $GPT3_{SELF-INST}$：使用Self-Instruct生成的数据集对GPT3进行微调</h5><p>$\quad$ 使用Self-Instruct生成的数据集对基于175B 的GPT3模型(“davinci”)进行微调，本文使用默认的超参数，除了将提示损失权重设置为0之外，训练2个epoch，得到$GPT3_{SELF-INST}$模型。</p>
+<h5 id="5-2-基线模型"><a href="#5-2-基线模型" class="headerlink" title="5.2 基线模型"></a>5.2 基线模型</h5><ul>
+<li>现成的语言模型</li>
+</ul>
+<p>$\quad$ 原始的<a href="T5" title="The power of scale for parameter-efficient prompt tuning">T5</a>模型，参数量为11B；原始的<a href="GPT3" title="Language models are few-shot learners">GPT3</a>模型，参数量为175B；以上两个基线只有预训练，没有额外的微调。这些基线将表明现成的lm在预训练后能够立即自然地遵循指令的程度。</p>
+<ul>
+<li>公开可用的指令调优模型</li>
+</ul>
+<p>$\quad$ <a href="T0" title="Multitask Prompted Training Enables ZeroShot Task Generalization">T0</a>是指在指令数据集PROMPTSOURCE上做了基于11B参数量的T5模型进行了微调之后得到的模型；<a href="$T_k$-INSTRUCT" title="Super-naturalinstructions: Generalization via declarative instructions on 1600+ tasks">$T_k$-INSTRUCT</a>在指令数据集SUPERNI上做了基于11B参数量的T5模型进行了微调之后得到的模型；并且可以公开使用。</p>
+<ul>
+<li>指令调优的GPT3模型</li>
+</ul>
+<p>$\quad$ <a href="InstructGPT" title="Training Language Models to Follow Instructions with Human Feedback">InstructGPT</a>模型，具备zero-shot能力。选取<code>text-davinci-001</code>模型进行对比，称其为$InstructGPT_{001}$。因为防止最最新模型导致泄露答案。本文调用构建SELF-INSTRUCT时调用了<code>001, 002 和 003</code></p>
+<p>$\quad$ 此外，为了将self-instruction与其他公开可用的指令调优数据进行比较，我们使用来自PROMPTSOURCE和SUPERNI的数据进一步微调GPT3模型。<code>GPT3+T0 Train</code> : 基于175B的GPT3模型，在指令数据集PROMPTSOURCE上做了微调之后得到的模型；<code>GPT3+SUPERNI Train</code>: 基于175B的GPT3模型，在指令数据集SUPERNI上做了微调之后得到的模型；<code>$GPT3_{SELF-INST}$+SUPERNI Train</code>：基于175B的GPT3模型，采用本文的Self-Instruct方法获取指令数据集，在加上SUPERNI这个指令数据集，在合并这两份数据集之后的总的数据集上微调之后的模型。为了节省训练预算，本文为每个数据集采样了50K个实例(涵盖了所有的指令)，其大小与本文生成的指令数据相当。根据<a href="Super" title="Super-naturalinstructions: Generalization viadeclarative instructions on 1600+ tasks">Wang等人(2022)</a>的发现和我们早期的实验，减少每个任务的实例数量并不会降低模型对未见任务的泛化性能。</p>
+<h5 id="5-3-实验一-在测评数据SUPERNI上的Zero-Shot效果"><a href="#5-3-实验一-在测评数据SUPERNI上的Zero-Shot效果" class="headerlink" title="5.3 实验一: 在测评数据SUPERNI上的Zero-Shot效果"></a>5.3 实验一: 在测评数据SUPERNI上的Zero-Shot效果</h5><p>$\quad$ 首先评估模型以Zero-Shot方式执行典型NLP任务的指令的能力。我们使用SUPERNI的评估集，它由119个任务组成，每个任务有100个实例。在这项工作中，我们主要关注Zero-Shot的设置，即只提示任务的定义，而没有上下文的演示示例。对于我们对GPT3变体的所有请求，我们使用确定性生成模式(temperature为0且无核采样)，没有特定的停止序列。</p>
+<ul>
+<li>Self-Instruct能够给GPT3模型带来巨大的提升，大概33.1%；</li>
+<li>经过Self-Instruct之后的GPT3的效果接近$InstructGPT_{001}$；</li>
+<li>从下表的最后两行的对比来看，即使已经在同源的测评数据集 SUPERNI 上经过了微调之后(将其归因于相似的指令风格和格式)，再使用 Self-Instruct 依然能够有提升(证明其作为补充数据的价值)；</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/VJJvWH2V"><img src="https://i.postimg.cc/523z1hgb/55.png" alt="图5 在数据集SUPERNI上的效果对比"></a></p>
+<h5 id="实验二-在面向用户的新任务上的效果"><a href="#实验二-在面向用户的新任务上的效果" class="headerlink" title="实验二: 在面向用户的新任务上的效果"></a>实验二: 在面向用户的新任务上的效果</h5><p>$\quad$ 测评数据 SUPERNI 还是有点偏向于研究性质，为了更好的测试本文中提出的方法训练出的模型在给用户使用时的效果。本文设计了一份新的更贴近普通用户的数据集，在该数据集上测试Self-Instruct的效果。在设计这个数据集时考虑到的有：</p>
+<ul>
+<li>不同的领域：邮件写作、社交媒体、生产力工具、娱乐、编程等；</li>
+<li>形式上：可以是（指令, 输入, 输出），也可以是（指令, 输出）；</li>
+<li>指令有的长、有的短，输入/输出中包含项目符号、表格、代码、方程等；</li>
+</ul>
+<p>$\quad$ 该数据集总共252条指令，每个指令一个实例。该数据集中的一些例子如下表所示：</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/ZCZ8CzsZ"><img src="https://i.postimg.cc/gkLNtYvw/6.png" alt="图6  新设计的测试数据集的一些例子"></a></p>
+<ul>
+<li>人工评估方法<br>$\quad$ 有些数据无法自动评估，所以专门通过专业人员进行衡量数据，采用四级评级系统，用于分类模型输出的质量，定义如下:<pre class="line-numbers language-none"><code class="language-none">A：回答是有效和令人满意的
+B：响应是可以接受的，但有一些小错误或缺陷可以改进
+C：响应是相关的，并响应指令，但它在内容中有重大错误。
+D：响应不相关或无效，包括重复输入，完全不相关的输出等。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+$\quad$ 首先，$GPT3_{SELF-INST}$（即用SELF-INSTRUCT微调的GPT3模型）在很大程度上超过了那些在T0或SUPERNI上训练的对应模型，证明了尽管有噪音，但生成的数据还是有价值的。</li>
+</ul>
+<p>$\quad$ 其次，与$InstructGPT_{001}$相比，$GPT3_{SELF-INST}$的表现相当接近–如果把有轻微缺陷的可接受的反应（RATING-3）算作有效，$GPT3_{SELF-INST}$只比$InstructGPT_{001}$低5%。</p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/67Xs23Zz"><img src="https://i.postimg.cc/s2B3LGgF/77.png" alt="图7 在面向用户的测试集上的效果对比"></a></p>
+<h5 id="5-4-对比对象"><a href="#5-4-对比对象" class="headerlink" title="5.4 对比对象"></a>5.4 对比对象</h5><ul>
+<li>原始的GPT3几乎无法响应用户的指令，所有微调过之后的模型都有明显的提升；</li>
+<li>即使策略Self-Instruct生成的数据在第 4.3 节中分析是有噪音的，但是模型$GPT3_{SELF-INST}$的效果明显优于模型 GPT3+T0 Training 和模型 GPT3 + SuperNI Training</li>
+<li>模型$GPT3_{SELF-INST}$的效果与模型$InstructGPT_{001}$的效果已经非常接近了;</li>
+<li>最后，模型$InstructGPT_{002}$和$InstructGPT_{003}$效果的确很强。</li>
+</ul>
+<h4 id="六、瓶颈和讨论"><a href="#六、瓶颈和讨论" class="headerlink" title="六、瓶颈和讨论"></a>六、瓶颈和讨论</h4><h5 id="6-1-为什么Self-Instruct有效"><a href="#6-1-为什么Self-Instruct有效" class="headerlink" title="6.1 为什么Self-Instruct有效"></a>6.1 为什么Self-Instruct有效</h5><p>$\quad$ 高质量的人类反馈在最近指令微调LMs的成功中所起的作用，有两个假设</p>
+<ul>
+<li>H1：人类反馈是指令微调的一个必要方面，因为LM需要了解在预训练期间没有完全了解的问题。</li>
+<li>H2：人类反馈是指令调优的一个可选方面，因为LM已经非常熟悉他们预训练中的指令。观察人类反馈只是一个轻量级的过程，用于调整他们的预训练分布/目标，这可能会被不同的过程所取代。</li>
+</ul>
+<p>$\quad$ 虽然实际情况可能介于这两个极端之间，但我们推测它更接近H2，特别是对于较大的模型。LMs已经知道很多关于语言指令的知识，这种直觉是Self-Instruct的一个关键动机，也是它的经验成功所支持的。</p>
+<h5 id="6-2-Self-Instruct的限制"><a href="#6-2-Self-Instruct的限制" class="headerlink" title="6.2 Self-Instruct的限制"></a>6.2 Self-Instruct的限制</h5><ul>
+<li><strong>尾部现象</strong></li>
+</ul>
+<p>$\quad$ Self-Instruct依赖于LM，它将继承LM的所有限制。最近的研究表明尾部现象对LM的成功构成了严重的挑战。换句话说，LM的最大收益对应于语言的频繁使用（语言使用分布的头部），而在低频上下文中收益最小。类似地，在这项工作的背景下，如果Self-Instruct的大部分收益偏向于在预训练语料库中更频繁出现的任务或指令，也就不足为奇了。因此，对于不常见的和创造性的指令，这种方法可能会表现出脆弱性。</p>
+<ul>
+<li><strong>依赖于大型模型</strong></li>
+</ul>
+<p>$\quad$由于Self-Instruct依赖于从LM中提取的归纳偏差，因此它可能最适合LLM。如果这是真的，那么对于那些没有大量计算资源的人来说，这可能会造成访问障碍。我们希望未来的研究将仔细研究增益作为模型大小或各种其他参数的函数。值得注意的是，使用人工注释的指令调优也受到类似的限制：对于更大的模型，指令调优的增益更高。</p>
+<ul>
+<li><strong>强化LM偏差</strong></li>
+</ul>
+<p>$\quad$ 作者关注的一点是这种迭代算法的意外后果，例如有问题的社会偏见的放大(关于性别、种族等的刻板印象或诋毁)。与此相关，在这个过程中观察到的一个挑战是算法难以产生平衡的标签，这反映了模型的先验偏见。我们希望未来的工作将讨论这些细节，以更好地了解这种方法的利弊。</p>
+<h4 id="七、结论"><a href="#七、结论" class="headerlink" title="七、结论"></a>七、结论</h4><ul>
+<li>提出Self-Instruct，一种任务不可知的方法，通过它自己生成指令数据（指令、输入和输出样本）并使用它进行引导来提高LM的指令跟踪能力。<br>在生成样本的修剪子集上对原始模型进行指令调优；</li>
+<li>在vanilla GPT3的实验中，我们观察到在Super-NaturalInstruction的原始模型有33%的绝对改进。这种性能与InstructGPT001（用私人用户数据和昂贵的人工标注进行训练）相当。</li>
+<li>策划了一套由专家撰写的针对新任务的说明。使用Self-Instruct调优GPT3的性能大大优于使用现有的公共指令数据集，与InstructGPT001的绝对差距仅为5%。</li>
+<li>希望Self-Instruct可以作为调整PLM以遵循人类指令的第一步，未来的工作可以建立在这些数据的基础上，以改进指令遵循模型。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">沙九</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://shajiu.com/2023/04/08/self-instruct-jiang-yu-yan-mo-xing-yu-zi-sheng-cheng-zhi-ling-dui-qi/">http://shajiu.com/2023/04/08/self-instruct-jiang-yu-yan-mo-xing-yu-zi-sheng-cheng-zhi-ling-dui-qi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">沙九</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%B8%93%E4%B8%9A/">
+                                    <span class="chip bg-color">专业</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/04/08/self-instruct-jiang-yu-yan-mo-xing-yu-zi-sheng-cheng-zhi-ling-dui-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="SELF-INSTRUCT：将语言模型与自生成指令对齐">
+                        
+                        <span class="card-title">SELF-INSTRUCT：将语言模型与自生成指令对齐</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="post-category">
+                                    大模型
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B8%93%E4%B8%9A/">
+                        <span class="chip bg-color">专业</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/20/wu-can-shu-ji-qi-fan-yi-yu-shang-dui-bi-xue-xi-xiao-lu-he-xing-neng-wo-quan-du-yao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="无参数机器翻译遇上对比学习效率和性能我全都要">
+                        
+                        <span class="card-title">无参数机器翻译遇上对比学习效率和性能我全都要</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91/" class="post-category">
+                                    机器翻译
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%B8%93%E4%B8%9A/">
+                        <span class="chip bg-color">专业</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 沙九的博客<br />'
+            + '文章作者: 沙九<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2023</span>
+            
+            <a href="/about" target="_blank">沙九</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">68.7k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+            <span id="sitetime"></span>
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Shajiu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:18810979033@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://www.facebook.com/profile.php?id=100072590255259" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/profile.php?id=100072590255259" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/shajiu/" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/shajiu/" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2495957419" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2495957419" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2021, 09, 19, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>s's
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
