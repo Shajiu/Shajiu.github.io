@@ -6,7 +6,7 @@
   <link href="http://shajiu.com/atom.xml" rel="self"/>
   
   <link href="http://shajiu.com/"/>
-  <updated>2023-04-08T13:06:03.173Z</updated>
+  <updated>2023-04-16T13:47:47.954Z</updated>
   <id>http://shajiu.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于生成式的UIE方法阅读笔记</title>
+    <link href="http://shajiu.com/2023/04/16/ji-yu-sheng-cheng-shi-de-uie-fang-fa-yue-du-bi-ji/"/>
+    <id>http://shajiu.com/2023/04/16/ji-yu-sheng-cheng-shi-de-uie-fang-fa-yue-du-bi-ji/</id>
+    <published>2023-04-16T13:40:37.000Z</published>
+    <updated>2023-04-16T13:47:47.954Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基于生成式的UIE方法&quot;&gt;&lt;a href=&quot;#基于生成式的UIE方法&quot; class=&quot;headerlink&quot; title=&quot;基于生成式的UIE方法&quot;&gt;&lt;/a&gt;基于生成式的UIE方法&lt;/h2&gt;&lt;h3 id=&quot;一、引言&quot;&gt;&lt;a href=&quot;#一、引言&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="信息抽取" scheme="http://shajiu.com/categories/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/"/>
+    
+    
+    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>SELF-INSTRUCT：将语言模型与自生成指令对齐</title>
@@ -466,32 +491,6 @@
         
         
     <summary type="html">&lt;h4 id=&quot;1、前言&quot;&gt;&lt;a href=&quot;#1、前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模型部署的主要技术</title>
-    <link href="http://shajiu.com/2021/12/24/mo-xing-bu-shu-de-zhu-yao-ji-zhu/"/>
-    <id>http://shajiu.com/2021/12/24/mo-xing-bu-shu-de-zhu-yao-ji-zhu/</id>
-    <published>2021-12-24T01:44:52.000Z</published>
-    <updated>2022-06-16T14:15:27.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在已有一个模型之后，怎么在线部署成为服务。&lt;/p&gt;
-&lt;h4 id=&quot;模型部署的背景&quot;&gt;&lt;a href=&quot;#模型部署的背景&quot; class=&quot;headerlink&quot;</summary>
         
       
     
