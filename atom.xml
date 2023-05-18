@@ -6,7 +6,7 @@
   <link href="http://shajiu.com/atom.xml" rel="self"/>
   
   <link href="http://shajiu.com/"/>
-  <updated>2023-04-16T13:47:47.954Z</updated>
+  <updated>2023-05-18T13:46:48.764Z</updated>
   <id>http://shajiu.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大语言模型(LLM)微调方法总结</title>
+    <link href="http://shajiu.com/2023/05/18/da-yu-yan-mo-xing-llm-wei-diao-fang-fa-zong-jie/"/>
+    <id>http://shajiu.com/2023/05/18/da-yu-yan-mo-xing-llm-wei-diao-fang-fa-zong-jie/</id>
+    <published>2023-05-18T13:39:44.000Z</published>
+    <updated>2023-05-18T13:46:48.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;大语言模型-LLM-微调方法总结&quot;&gt;&lt;a href=&quot;#大语言模型-LLM-微调方法总结&quot; class=&quot;headerlink&quot; title=&quot;大语言模型(LLM)微调方法总结&quot;&gt;&lt;/a&gt;大语言模型(LLM)微调方法总结&lt;/h2&gt;&lt;h3 id=&quot;一、引言&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>基于生成式的UIE方法阅读笔记</title>
@@ -475,31 +496,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>搞定接口性能</title>
-    <link href="http://shajiu.com/2021/12/24/gao-ding-jie-kou-xing-neng/"/>
-    <id>http://shajiu.com/2021/12/24/gao-ding-jie-kou-xing-neng/</id>
-    <published>2021-12-24T08:38:25.000Z</published>
-    <updated>2022-06-16T14:15:27.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;1、前言&quot;&gt;&lt;a href=&quot;#1、前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="周总结" scheme="http://shajiu.com/categories/%E5%91%A8%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="个人提升" scheme="http://shajiu.com/tags/%E4%B8%AA%E4%BA%BA%E6%8F%90%E5%8D%87/"/>
     
   </entry>
   
