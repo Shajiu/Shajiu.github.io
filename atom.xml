@@ -6,7 +6,7 @@
   <link href="http://shajiu.com/atom.xml" rel="self"/>
   
   <link href="http://shajiu.com/"/>
-  <updated>2023-05-18T13:46:48.764Z</updated>
+  <updated>2023-05-18T14:05:20.108Z</updated>
   <id>http://shajiu.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://shajiu.com/2023/05/18/da-yu-yan-mo-xing-llm-wei-diao-fang-fa-zong-jie/"/>
     <id>http://shajiu.com/2023/05/18/da-yu-yan-mo-xing-llm-wei-diao-fang-fa-zong-jie/</id>
     <published>2023-05-18T13:39:44.000Z</published>
-    <updated>2023-05-18T13:46:48.764Z</updated>
+    <updated>2023-05-18T14:05:20.108Z</updated>
     
     
       
@@ -34,6 +34,10 @@
     
     
     
+    <category term="大模型" scheme="http://shajiu.com/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+    
+    <category term="专业" scheme="http://shajiu.com/tags/%E4%B8%93%E4%B8%9A/"/>
     
   </entry>
   
